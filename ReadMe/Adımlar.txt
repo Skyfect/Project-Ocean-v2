@@ -1,0 +1,11 @@
+*Xampp C' ye indirelecek
+
+*Xampp içerisine htdocs içerisinde UnityGame adlı klasör oluşturulacak
+
+*Dosyada verdiğim login,logout,register.php dosyaları eklenecek.
+
+*Bir database açılacak database ismi "unitygamedb" olmalı.
+
+*"myuser" adlı bir tablo açılmalı içinde
+
+*tablonun içerisinde "isOnline(tinyint),myNickName(varchar),myPassword(varchar)"eklenmelidir.
