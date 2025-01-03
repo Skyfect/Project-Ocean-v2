@@ -70,5 +70,4 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-Assets/Resources/Resorcues/Crest/Crest-Examples/PirateCove/Props/Sketchfab_FREE/by_3dhdscan/stranska-rock-1/sources/biggerthan100mb
-*.meta
+
