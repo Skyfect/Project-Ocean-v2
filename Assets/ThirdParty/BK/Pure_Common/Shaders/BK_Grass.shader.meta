@@ -7,3 +7,10 @@ ShaderImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 296552
+  packageName: 'Pure Nature 2 : Jungle'
+  packageVersion: 
+  assetPath: Assets/ThirdParty/BK/Pure_Common/Shaders/BK_Grass.shader
+  uploadId: 0
