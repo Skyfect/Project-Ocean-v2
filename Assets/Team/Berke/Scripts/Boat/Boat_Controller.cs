@@ -52,7 +52,7 @@ public class Boat_Controller : MonoBehaviour
         Swing();
 
         Vector3 velocity = _rb.velocity;
-        Debug.Log("current speed:" + velocity.z);
+        //Debug.Log("current speed:" + velocity.z);
     }
 
     [System.Obsolete]
