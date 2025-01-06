@@ -3,7 +3,57 @@ guid: ccc18876b3dd592428dc96cfd8c4f1d4
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BoatBotom
+    second: {fileID: 2100000, guid: bb1e59c10949a3f4185c564dfe01bf58, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BoatWall
+    second: {fileID: 2100000, guid: 92cf82d988d9eae4584c6d518df76c50, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ConsoleTableSteringWheelLampLedder
+    second: {fileID: 2100000, guid: e5607c52dc70cd04aaf53b28acf4935a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DoorWindowLever
+    second: {fileID: 2100000, guid: 29da01623cfab104e9673519e671c1f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flor
+    second: {fileID: 2100000, guid: d609fdd80d3121d42b4bc6d7d1240e79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LampEmission
+    second: {fileID: 2100000, guid: 184fb38fe8b9b4e488b145fd14695811, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 0f9429a5370371f4b9320aea3be19413, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OldLocker
+    second: {fileID: 2100000, guid: 85aa6e3ec05ea404c9b1f5c9dc85ec41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WindowGlass
+    second: {fileID: 2100000, guid: c296e82806a7fc44a9ceffc5a903ca18, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodParts
+    second: {fileID: 2100000, guid: 3b5e268d9b3d5f745b4639d3c400748f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
