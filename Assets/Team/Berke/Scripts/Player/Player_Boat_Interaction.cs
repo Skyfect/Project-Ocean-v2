@@ -7,7 +7,6 @@ public class Player_Boat_Interaction : MonoBehaviour
     [SerializeField] private Camera camera;
     [SerializeField] private Transform wheel; 
     [SerializeField] private Transform boat; 
-    [SerializeField] private float shipTurnSpeed = 10f;
     [SerializeField] private Material _selectedMaterial;
 
     private List<MeshRenderer> rendererLists = new List<MeshRenderer>();

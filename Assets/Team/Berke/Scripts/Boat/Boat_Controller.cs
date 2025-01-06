@@ -1,4 +1,5 @@
 using Crest;
+using Crest.Examples;
 using UnityEngine;
 
 public class Boat_Controller : MonoBehaviour
@@ -6,16 +7,11 @@ public class Boat_Controller : MonoBehaviour
     [Header("MOVEMENT & TURN")]
     [SerializeField] private float _maxSpeed = 30;
     [SerializeField] private float _speedReducer = 5f;
-    [SerializeField] private float _moveSpeed = 10f;
-    [SerializeField] private float _turnSpeed = 50f;
+    [SerializeField] private float _moveForce = 10f;
+    [SerializeField] private float _turnForce = 50f;
     [SerializeField] private Transform _forcePoint;
-    [SerializeField] private GameObject _wheel;
-    [SerializeField] private GameObject _forceRod;
-
-    [Header("SWING")]
-    [SerializeField] private float swayAmplitude = 1f;
-    [SerializeField] private float swayFrequency = 1f;
-    private Vector3 swayAxis = new Vector3(1, 0, 1);
+    private GameObject _wheel;
+    private GameObject _forceRod;
 
     [Header("GRAVITY")]
     [SerializeField] private float _gravity = 9.81f;
@@ -31,10 +27,14 @@ public class Boat_Controller : MonoBehaviour
     private Rigidbody _rb;
     private Animator _wheelAnimtor;
     private Animator _forceRodAnimtor;
+    private BoatAlignNormal _crestBoatAlignNormal;
 
     private void Awake()
     {
+        _crestBoatAlignNormal = GetComponent<BoatAlignNormal>();
         _rb = GetComponent<Rigidbody>();
+        _wheel = GameObject.FindWithTag("Wheel");
+        _forceRod = GameObject.FindWithTag("Lever");
         _wheelAnimtor = _wheel.GetComponent<Animator>();
         _forceRodAnimtor = _forceRod.GetComponent <Animator>();
     }
@@ -49,10 +49,9 @@ public class Boat_Controller : MonoBehaviour
     {
         Movement();
         HandleGravityAndTouchWater();
-        Swing();
 
         Vector3 velocity = _rb.velocity;
-        //Debug.Log("current speed:" + velocity.z);
+        Debug.Log("current speed:" + velocity.z);
     }
 
     [System.Obsolete]
@@ -60,9 +59,11 @@ public class Boat_Controller : MonoBehaviour
     {
         if (_isMoving)
         {
-            //Vector3 moveForce = transform.forward * _moveSpeed;
-            //_rb.AddForce(moveForce, ForceMode.Force);
-            _rb.AddForceAtPosition(transform.forward * _moveSpeed, _forcePoint.position, ForceMode.Force);
+            _crestBoatAlignNormal._enginePower = 0.257F; // CREST BOAT ENGINE POWER CHANGED
+
+            Vector3 moveForce = transform.forward * _moveForce;
+            _rb.AddForce(moveForce, ForceMode.Force);
+            //_rb.AddForceAtPosition(transform.forward * _moveSpeed, _forcePoint.position, ForceMode.Force);
 
             if (_rb.velocity.magnitude > _maxSpeed)
             {
@@ -71,6 +72,8 @@ public class Boat_Controller : MonoBehaviour
         }
         else
         {
+            _crestBoatAlignNormal._enginePower = 0f;  // CREST BOAT ENGINE POWER RESET
+
             Vector3 frictionForce = -_rb.velocity.normalized * _speedReducer * _rb.velocity.magnitude;
             _rb.AddForce(frictionForce, ForceMode.Force);
 
@@ -81,25 +84,14 @@ public class Boat_Controller : MonoBehaviour
         }
     }
 
-    private void Swing()
-    {
-        if (_rb)
-        {
-            float swayAngle = (Mathf.PerlinNoise(Time.time * swayFrequency, 0f) - 0.5f) * 2 * swayAmplitude;
-            Quaternion swayRotation = Quaternion.Euler(swayAxis * swayAngle);
-            _rb.MoveRotation(Quaternion.Lerp(_rb.rotation, _rb.rotation * swayRotation, Time.fixedDeltaTime));
-        }
-
-        //if (_isMoving && _isTurn) _rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-        //else if(_isMoving && !_isTurn) _rb.constraints = RigidbodyConstraints.FreezeRotationY;
-        //else if(!_isMoving && _isTurn) _rb.constraints = RigidbodyConstraints.FreezeRotationY;
-        //else _rb.constraints = RigidbodyConstraints.FreezeRotationY;
-    }
 
     public void Rotate(int direction)
     {
         // Rotate (-1: Left, 1: Right)
-        transform.Rotate(0f, direction * _turnSpeed * Time.deltaTime, 0f);
+        //transform.Rotate(0f, direction * _turnSpeed * Time.deltaTime, 0f);
+
+        Vector3 torque = Vector3.up * direction * _turnForce;
+        _rb.AddTorque(torque, ForceMode.Acceleration);
     }
 
     public void ToggleMovement()
