@@ -1,5 +1,7 @@
 using Nakama;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
@@ -8,9 +10,6 @@ using UnityEngine.UI;
 
 public class NetworkConnection : MonoBehaviour
 {
-    public static IClient client;
-    public static ISession session;
-
     public Button facebookLoginButton;
     public Button googleLoginButton;
     public Button deviceIdLoginButton;
@@ -21,32 +20,118 @@ public class NetworkConnection : MonoBehaviour
     public GameObject loginPanel;
     public GameObject lobbyPanel;
     public TMP_Text lobbyStatusText;
+    // Temel deðiþkenler
+    private IClient client;        // Nakama sunucusuyla iletiþim için ana istemci
+    private ISocket socket;        // Gerçek zamanlý iletiþim için WebSocket baðlantýsý
+    private ISession session;      // Oyuncunun oturum bilgileri
+    private IMatch currentMatch;   // Mevcut eþleþme bilgileri
+    private bool isConnected;      // Sunucuya baðlantý durumu
 
-    public ISocket socket;
-    public static IMatch match;
+    // Oyuncu yönetimi için veri yapýlarý
+    private Dictionary<string, GameObject> players;  // Tüm oyuncularý tutan sözlük
+    private Vector3[] spawnPositions;               // Oyuncularýn baþlangýç pozisyonlarý
+    private Queue<SpawnInfo> spawnQueue;            // Spawn iþlemlerini ana thread'e taþýmak için kuyruk
+    private Queue<PositionUpdate> positionQueue;    // Pozisyon güncellemelerini ana thread'e taþýmak için kuyruk
 
-    public string ticket;
-    public string matchId;
+    [SerializeField] private GameObject playerPrefab;
 
-    public static NetworkConnection instance;
-
-    private void Awake()
+    // Eþleþtirme sabitleri
+    private const string MATCHMAKING_POOL = "2players_pool";
+    private const int MIN_PLAYERS = 2;
+    private const int MAX_PLAYERS = 2;
+    private const int OP_CODE_POSITION = 1;  // Pozisyon güncelleme mesajlarý için kod
+    private struct PositionUpdate
     {
-        instance = this;
+        public string userId;
+        public Vector3 position;
+
+        public PositionUpdate(string id, Vector3 pos)
+        {
+            userId = id;
+            position = pos;
+        }
+    }
+    private struct SpawnInfo
+    {
+        public string userId;
+        public Vector3 position;
+        public bool isLocalPlayer;
+
+        public SpawnInfo(string id, Vector3 pos, bool isLocal)
+        {
+            userId = id;
+            position = pos;
+            isLocalPlayer = isLocal;
+        }
     }
 
-    public async Task Connect() {
-        client = new Client("http", "127.0.0.1", 7350, "defaultkey");
-
-        facebookLoginButton.onClick.AddListener(() => LoginWithFacebook());
-        googleLoginButton.onClick.AddListener(() => LoginWithGoogle());
-        deviceIdLoginButton.onClick.AddListener(() => LoginWithDeviceId());
-        emailRegisterButton.onClick.AddListener(() => RegisterWithEmail());
-        emailLoginButton.onClick.AddListener(() => LoginWithEmail());
-    }
     void Start()
     {
-        
+        // Define spawn positions for Player 1 and Player 2
+        spawnPositions[0] = new Vector3(-2, 0, 0);  // Player 1 spawn position
+        spawnPositions[1] = new Vector3(2, 0, 0);   // Player 2 spawn position
+        _ = InitializeNakama();
+    }
+
+    private async Task InitializeNakama()
+    {
+        try
+        {
+            // Initialize the Nakama client
+            client = new Client("http", "localhost", 7350, "defaultkey");
+
+            facebookLoginButton.onClick.AddListener(() => LoginWithFacebook());
+            googleLoginButton.onClick.AddListener(() => LoginWithGoogle());
+            deviceIdLoginButton.onClick.AddListener(() => LoginWithDeviceId());
+            emailRegisterButton.onClick.AddListener(() => RegisterWithEmail());
+            emailLoginButton.onClick.AddListener(() => LoginWithEmail());
+
+            
+
+            // Add socket event listeners
+            socket.ReceivedMatchPresence += OnReceivedMatchPresence;
+            socket.ReceivedMatchState += OnReceivedMatchState;
+            socket.ReceivedMatchmakerMatched += OnReceivedMatchmakerMatched;
+
+            isConnected = true;
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Error connecting to Nakama: {e.Message}");
+            isConnected = false;
+        }
+    }
+
+    public async void StartMatchmaking()
+    {
+        if (!isConnected)
+        {
+            Debug.LogError("Cannot start matchmaking - not connected to server");
+            return;
+        }
+
+        try
+        {
+            Debug.Log("Starting matchmaking...");
+
+            // Register for matchmaker matched callback
+            socket.ReceivedMatchmakerMatched += OnReceivedMatchmakerMatched;
+
+            // Add the current user to the matchmaking pool
+            var matchmakingTicket = await socket.AddMatchmakerAsync(
+                query: "*",
+                minCount: MIN_PLAYERS,
+                maxCount: MAX_PLAYERS,
+                stringProperties: new Dictionary<string, string>(),
+                numericProperties: new Dictionary<string, double>()
+            );
+
+            Debug.Log($"Matchmaking ticket: {matchmakingTicket.Ticket}");
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Error starting matchmaking: {e.Message}");
+        }
     }
 
     private async void LoginWithFacebook()
@@ -63,8 +148,10 @@ public class NetworkConnection : MonoBehaviour
 
     private async void LoginWithDeviceId()
     {
-        string deviceId = SystemInfo.deviceUniqueIdentifier;
+        // Add random suffix to device ID to support multiple instances on same machine
+        var deviceId = SystemInfo.deviceUniqueIdentifier + UnityEngine.Random.Range(0, 10000).ToString();
         session = await client.AuthenticateDeviceAsync(deviceId);
+
         Debug.Log($"Device ID ile giriþ baþarýlý. User ID: {session.UserId}");
         ShowLobbyPanel();
     }
@@ -84,7 +171,6 @@ public class NetworkConnection : MonoBehaviour
         {
             session = await client.AuthenticateEmailAsync(email, password);
             Debug.Log($"Email ile kayýt baþarýlý. User ID: {session.UserId}");
-            ShowLobbyPanel();
         }
         catch (Exception e)
         {
@@ -106,6 +192,7 @@ public class NetworkConnection : MonoBehaviour
         try
         {
             session = await client.AuthenticateEmailAsync(email, password);
+
             Debug.Log($"Email ile giriþ baþarýlý. User ID: {session.UserId}");
             ShowLobbyPanel();
         }
@@ -120,6 +207,8 @@ public class NetworkConnection : MonoBehaviour
         try
         {
             session = await client.AuthenticateCustomAsync(token);
+
+
             Debug.Log($"{provider} ile giriþ baþarýlý. User ID: {session.UserId}");
             ShowLobbyPanel();
         }
@@ -137,58 +226,174 @@ public class NetworkConnection : MonoBehaviour
         socket = client.NewSocket();
         await socket.ConnectAsync(session);
         Debug.Log("Socket baðlantýsý kuruldu.");
-        NetworkManager.instance.CreateSocket();
-        FindMatch();
-        //StartMatchmaking();
     }
 
-    public async void FindMatch()
+    private async void OnReceivedMatchmakerMatched(IMatchmakerMatched matched)
     {
-        Debug.Log("Finding match");
-        lobbyStatusText.text = "Eþleþme aranýyor...";
-
-        var matchmakingTicket = await socket.AddMatchmakerAsync("*", 2, 2);
-        ticket = matchmakingTicket.Ticket;
-
-    }
-    /*
-    private async void StartMatchmaking()
-    {
+        Debug.Log("Received matchmaker matched event!");
         try
         {
-            lobbyStatusText.text = "Eþleþme aranýyor...";
-            var matchmakingTicket = await socket.AddMatchmakerAsync("*", 2, 2);
-            ticket = matchmakingTicket.Ticket;
-
-            socket.ReceivedMatchmakerMatched += async (IMatchmakerMatched matched) =>
+            // Join the match
+            currentMatch = await socket.JoinMatchAsync(matched);
+            Debug.Log($"Joined match: {currentMatch.Id}");
+            Debug.Log($"Number of players in match: {currentMatch.Presences.Count()}");
+            Debug.Log($"My user ID: {session.UserId}");
+            foreach (var presence in currentMatch.Presences)
             {
-              
-                match = await socket.JoinMatchAsync(matched);
-                Debug.Log($"Eþleþme bulundu! Match ID: {match.Id}");
-                lobbyStatusText.text = "Eþleþme bulundu, oyun baþlýyor...";
+                Debug.Log($"Player in match: {presence.UserId}");
+            }
 
-                foreach (var user in match.Presences)
+            // Determine if we're player 1 or 2 based on join order
+            int playerIndex = 0;
+            foreach (var presence in currentMatch.Presences)
+            {
+                if (presence.UserId == session.UserId)
                 {
-                    Debug.Log($"Player Session ID: {user.SessionId}");
+                    break;
                 }
-           
+                playerIndex++;
+            }
 
-                lobbyStatusText.text = "Eþleþme bulundu, oyun baþlýyor...";
-                await Task.Delay(2000);
-                lobbyPanel.SetActive(false);
-                // GoToNextScene();
-            };
+            Debug.Log($"I am player {playerIndex + 1}");
+            // Queue local player spawn
+            spawnQueue.Enqueue(new SpawnInfo(session.UserId, spawnPositions[playerIndex], true));
+
+            // Queue other players spawn
+            foreach (var presence in currentMatch.Presences)
+            {
+                if (presence.UserId != session.UserId && !players.ContainsKey(presence.UserId))
+                {
+                    int otherIndex = (playerIndex == 0) ? 1 : 0;
+                    Debug.Log($"Queueing spawn for other player at index {otherIndex}");
+                    spawnQueue.Enqueue(new SpawnInfo(presence.UserId, spawnPositions[otherIndex], false));
+                }
+            }
         }
         catch (Exception e)
         {
-            Debug.LogError($"Eþleþme sýrasýnda hata: {e.Message}");
-            lobbyStatusText.text = "Eþleþme baþarýsýz.";
+            Debug.LogError($"Error joining match: {e.Message}");
         }
-   
-    }*/
-
-    private void GoToNextScene()
-    {
-        SceneManager.LoadScene("Level01");
     }
+
+    private void OnReceivedMatchPresence(IMatchPresenceEvent presenceEvent)
+    {
+        Debug.Log($"Received match presence event. Joins: {presenceEvent.Joins.Count()}, Leaves: {presenceEvent.Leaves.Count()}");
+        foreach (var presence in presenceEvent.Joins)
+        {
+            Debug.Log($"Player joined: {presence.Username}");
+            if (presence.UserId != session.UserId)
+            {
+                int newPlayerIndex = players.Count % 2;
+                Debug.Log($"Spawning joining player at index {newPlayerIndex}");
+                spawnQueue.Enqueue(new SpawnInfo(presence.UserId, spawnPositions[newPlayerIndex], false));
+            }
+        }
+
+        foreach (var presence in presenceEvent.Leaves)
+        {
+            Debug.Log($"Player left: {presence.Username}");
+            if (players.ContainsKey(presence.UserId))
+            {
+                Destroy(players[presence.UserId]);
+                players.Remove(presence.UserId);
+            }
+        }
+    }
+
+    private void OnReceivedMatchState(IMatchState matchState)
+    {
+        if (matchState.OpCode == OP_CODE_POSITION)
+        {
+            try
+            {
+                var positionData = System.Text.Encoding.UTF8.GetString(matchState.State);
+                var position = JsonUtility.FromJson<Vector3>(positionData);
+
+                // Queue the position update to be processed in the main thread
+                positionQueue.Enqueue(new PositionUpdate(matchState.UserPresence.UserId, position));
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Error processing position update: {e.Message}");
+            }
+        }
+    }
+
+    private void SpawnPlayerInternal(string userId, Vector3 position, bool isLocalPlayer)
+    {
+        if (!players.ContainsKey(userId))
+        {
+            if (playerPrefab != null)
+            {
+                var playerObj = Instantiate(playerPrefab, position, Quaternion.identity);
+                var player = playerObj.GetComponent<CubePlayer>();
+
+                if (player != null)
+                {
+                    player.Initialize(userId, isLocalPlayer, this);
+                    players[userId] = playerObj;
+
+                    if (isLocalPlayer)
+                    {
+                        // Immediately send initial position to other players
+                        SendPositionUpdate(position);
+                    }
+                }
+            }
+            else
+            {
+                Debug.LogError("Player prefab not set!");
+            }
+        }
+    }
+
+    public async void SendPositionUpdate(Vector3 position)
+    {
+        if (currentMatch != null)
+        {
+            try
+            {
+                string positionJson = JsonUtility.ToJson(position);
+                byte[] positionBytes = System.Text.Encoding.UTF8.GetBytes(positionJson);
+
+                await socket.SendMatchStateAsync(currentMatch.Id, OP_CODE_POSITION, positionBytes);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Error sending position update: {e.Message}");
+            }
+        }
+    }
+
+    private void OnDestroy()
+    {
+        // Clean up socket connection when the script is destroyed
+        if (socket != null && socket.IsConnected)
+        {
+            socket.ReceivedMatchmakerMatched -= OnReceivedMatchmakerMatched;
+            socket.CloseAsync();
+        }
+
+        foreach (var player in players.Values)
+        {
+            if (player != null)
+            {
+                Destroy(player);
+            }
+        }
+        players.Clear();
+    }
+
+    private void UpdatePlayerPosition(string userId, Vector3 position)
+    {
+        if (players.ContainsKey(userId))
+        {
+            var player = players[userId].GetComponent<CubePlayer>();
+            if (player != null)
+            {
+                player.UpdatePosition(position);
+            }
+        }
+    }
+
 }
