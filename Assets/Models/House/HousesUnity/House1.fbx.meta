@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Foundation
-    second: {fileID: 4268061769963950097, guid: 604d93e0d9d312849a110beac1ee7c52, type: 3}
+    second: {fileID: 2100000, guid: 79b99a4633e99554f9a00d8c229a886d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
