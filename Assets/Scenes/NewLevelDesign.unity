@@ -19534,19 +19534,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1424311094817429910, guid: eb3dc7ff50ee4770bdec65b9681e2b31, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.38658893
+      value: -0.43778783
       objectReference: {fileID: 0}
     - target: {fileID: 1424311094817429910, guid: eb3dc7ff50ee4770bdec65b9681e2b31, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.3865893
+      value: 0.43778825
       objectReference: {fileID: 0}
     - target: {fileID: 1424311094817429910, guid: eb3dc7ff50ee4770bdec65b9681e2b31, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.5920716
+      value: -0.55528504
       objectReference: {fileID: 0}
     - target: {fileID: 1424311094817429910, guid: eb3dc7ff50ee4770bdec65b9681e2b31, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.5920718
+      value: -0.55528533
       objectReference: {fileID: 0}
     - target: {fileID: 1424311094817429910, guid: eb3dc7ff50ee4770bdec65b9681e2b31, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -19558,7 +19558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1424311094817429910, guid: eb3dc7ff50ee4770bdec65b9681e2b31, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -246.284
+      value: -256.505
       objectReference: {fileID: 0}
     - target: {fileID: 1424311094817429910, guid: eb3dc7ff50ee4770bdec65b9681e2b31, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -19567,6 +19567,14 @@ PrefabInstance:
     - target: {fileID: 2029631700902754393, guid: eb3dc7ff50ee4770bdec65b9681e2b31, type: 3}
       propertyPath: m_Name
       value: DenseFog (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3586199412790310860, guid: eb3dc7ff50ee4770bdec65b9681e2b31, type: 3}
+      propertyPath: InitialModule.rotation3D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3586199412790310860, guid: eb3dc7ff50ee4770bdec65b9681e2b31, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 91.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
