@@ -13,11 +13,6 @@ public class Boat_Controller : MonoBehaviour
     private GameObject _wheel;
     private GameObject _forceRod;
 
-    [Header("GRAVITY")]
-    [SerializeField] private float _gravity = 9.81f;
-    [SerializeField] private Transform _waterCheck;
-    [SerializeField] private LayerMask _waterLayer;
-
     [Header("COMPONNETS")]
     private float _waterCheckRadius = 0.2f;
     private bool _isInWater;
@@ -48,7 +43,6 @@ public class Boat_Controller : MonoBehaviour
     void FixedUpdate()
     {
         Movement();
-        HandleGravityAndTouchWater();
 
         Vector3 velocity = _rb.velocity;
         Debug.Log("current speed:" + velocity.z);
@@ -98,21 +92,6 @@ public class Boat_Controller : MonoBehaviour
     {
         _isMoving = !_isMoving;
         HandleAnimControl();
-    }
-
-    private void HandleGravityAndTouchWater()
-    {
-        _isInWater = Physics.CheckSphere(_waterCheck.position, _waterCheckRadius, _waterLayer);
-
-        if (_isInWater)
-        {
-            _currentMovement.y = +0.5f;
-
-        }
-        else
-        {
-            _currentMovement.y -= _gravity * Time.deltaTime;
-        }
     }
 
     private void HandleAnimControl()

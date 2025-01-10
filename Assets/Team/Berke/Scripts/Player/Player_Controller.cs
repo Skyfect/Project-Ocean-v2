@@ -10,6 +10,9 @@ public class Player_Controller : MonoBehaviour
     [SerializeField] private float _animHorizontal, _animVertical;
     private bool _isCrouch;
 
+    private float nextUpdateTime = 0f;
+    private float updateInterval = 0.05f;
+
     [Header("Jump")]
     [SerializeField] private float _jumpForce= 5;
     [SerializeField] private float _gravity = 9.81f;
@@ -57,11 +60,13 @@ public class Player_Controller : MonoBehaviour
     [SerializeField] private Transform _headTransform;
     private Animator _anim;
     private Rigidbody _rb;
+    private NetworkConnection _networkConnection;
 
     private void Awake()
     {
         _anim = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody>();
+        _networkConnection = FindFirstObjectByType<NetworkConnection>();
 
         _walkAction = _playerControls.FindActionMap("Player").FindAction("Walk");
         _runAction = _playerControls.FindActionMap("Player").FindAction("Run");
@@ -142,6 +147,12 @@ public class Player_Controller : MonoBehaviour
         _currentMovement.z = horizontalMovement.z;
 
         _rb.linearVelocity = (_currentMovement);
+
+        if (_networkConnection != null && Time.time >= nextUpdateTime)
+        {
+            _networkConnection.SendPositionUpdate(transform.position);
+            nextUpdateTime = Time.time + updateInterval;
+        }
     }
 
     private void MovementAnimsControl()

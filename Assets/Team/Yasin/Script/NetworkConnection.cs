@@ -309,6 +309,8 @@ public class NetworkConnection : MonoBehaviour
                 var positionData = System.Text.Encoding.UTF8.GetString(matchState.State);
                 var position = JsonUtility.FromJson<Vector3>(positionData);
 
+                Debug.Log("player position:" +position);
+
                 // Queue the position update to be processed in the main thread
                 positionQueue.Enqueue(new PositionUpdate(matchState.UserPresence.UserId, position));
             }

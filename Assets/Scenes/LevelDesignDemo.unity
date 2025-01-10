@@ -1966,6 +1966,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1975024167881624252, guid: d5d18eb37a22fa5489405fe182e71163, type: 3}
+      propertyPath: _boyancyTorque
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2682211100836955934, guid: d5d18eb37a22fa5489405fe182e71163, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.3
@@ -2009,6 +2013,14 @@ PrefabInstance:
     - target: {fileID: 3143031808145493276, guid: d5d18eb37a22fa5489405fe182e71163, type: 3}
       propertyPath: m_Name
       value: BoatFull (New Prefab)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5217990303909606403, guid: d5d18eb37a22fa5489405fe182e71163, type: 3}
+      propertyPath: m_Intensity
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 8532325337535995301, guid: d5d18eb37a22fa5489405fe182e71163, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.31
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
