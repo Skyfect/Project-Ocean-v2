@@ -1,5 +1,6 @@
 using Crest;
 using Crest.Examples;
+using System.Collections;
 using UnityEngine;
 
 public class Boat_Controller : MonoBehaviour
@@ -9,6 +10,12 @@ public class Boat_Controller : MonoBehaviour
     [SerializeField] private float _speedReducer = 5f;
     [SerializeField] private float _moveForce = 10f;
     [SerializeField] private float _turnForce = 50f;
+    [SerializeField] private float _engineStartPower= 0f; //
+    [SerializeField] private float _engineCurrentPower; //
+    [SerializeField] private float _engineIncreaseSpeed = 0.01f; //
+    [SerializeField] private float _engineMaxPower = 0.37f; //
+
+
     [SerializeField] private Transform _forcePoint;
     private GameObject _wheel;
     private GameObject _forceRod;
@@ -18,7 +25,7 @@ public class Boat_Controller : MonoBehaviour
     private bool _isInWater;
     private bool _isTurn;
     private Vector3 _currentMovement = Vector3.zero;
-    private bool _isMoving = false;
+    [SerializeField] private bool _isMoving = false;
     private Rigidbody _rb;
     private Animator _wheelAnimtor;
     private Animator _forceRodAnimtor;
@@ -37,6 +44,8 @@ public class Boat_Controller : MonoBehaviour
     private void Start()
     {
         _rb.centerOfMass = new Vector3(0,-1,0);
+
+        _engineCurrentPower = _engineStartPower;
     }
 
     [System.Obsolete]
@@ -53,7 +62,7 @@ public class Boat_Controller : MonoBehaviour
     {
         if (_isMoving)
         {
-            _crestBoatAlignNormal._enginePower = 0.257F; // CREST BOAT ENGINE POWER CHANGED
+            //_crestBoatAlignNormal._enginePower = _engineCurrentPower; // CREST BOAT ENGINE POWER CHANGEDF
 
             Vector3 moveForce = transform.forward * _moveForce;
             _rb.AddForce(moveForce, ForceMode.Force);
@@ -88,10 +97,28 @@ public class Boat_Controller : MonoBehaviour
         _rb.AddTorque(torque, ForceMode.Acceleration);
     }
 
+    private IEnumerator IncreaseEnginePower()
+    {
+        _engineCurrentPower = _engineStartPower;
+
+        while (_engineCurrentPower < _engineMaxPower)
+        {
+            _engineCurrentPower += _engineIncreaseSpeed * Time.deltaTime;
+            _crestBoatAlignNormal._enginePower = _engineCurrentPower;
+
+            if (_crestBoatAlignNormal._enginePower > _engineMaxPower)
+            {
+                _crestBoatAlignNormal._enginePower = _engineMaxPower;
+            }
+            yield return null;
+        }
+    }
     public void ToggleMovement()
     {
         _isMoving = !_isMoving;
         HandleAnimControl();
+
+        if (_isMoving) StartCoroutine(IncreaseEnginePower());
     }
 
     private void HandleAnimControl()

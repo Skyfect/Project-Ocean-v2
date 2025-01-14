@@ -3,10 +3,12 @@ using UnityEngine;
 
 public class Player_Boat_Interaction : MonoBehaviour
 {
-    [SerializeField] private float interactionRange = 5f; 
+    [SerializeField] private float interactionRange = 5f;
+    [SerializeField] private Transform _wheelPosition;
+    [SerializeField] private Transform _playerParent;
     [SerializeField] private Camera camera;
-    [SerializeField] private Transform wheel; 
-    [SerializeField] private Transform boat; 
+    private Transform wheel; 
+    private Transform boat; 
     [SerializeField] private Material _selectedMaterial;
 
     private List<MeshRenderer> rendererLists = new List<MeshRenderer>();
@@ -24,7 +26,9 @@ public class Player_Boat_Interaction : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
         _anim = GetComponent<Animator>();
+        boat = FindAnyObjectByType<Boat_Controller>().transform;
         boatController = FindFirstObjectByType<Boat_Controller>();
+        wheel = GameObject.FindWithTag("Wheel").transform;
     }
 
     void Update()
@@ -57,6 +61,8 @@ public class Player_Boat_Interaction : MonoBehaviour
         }
 
         BoatTurnControl();
+
+        if(isSteering && _wheelPosition != null) transform.position = _wheelPosition.position;
     }
 
     private void SelectMaterial(RaycastHit hit)
@@ -93,7 +99,7 @@ public class Player_Boat_Interaction : MonoBehaviour
 
     public void BoatTurnControl()
     {
-        if (isSteering)
+        if (isSteering && boatController != null)
         {
             if (Input.GetKey(KeyCode.A))
             {
@@ -121,8 +127,7 @@ public class Player_Boat_Interaction : MonoBehaviour
     {
         isSteering = true;
 
-        transform.SetParent(boat);
-        GetComponent<Rigidbody>().isKinematic = true;
+        _playerParent.SetParent(boat);
 
         Cursor.lockState = CursorLockMode.None; 
         Cursor.visible = false; 
@@ -136,8 +141,7 @@ public class Player_Boat_Interaction : MonoBehaviour
     {
         isSteering = false;
 
-        transform.SetParent(null); 
-        GetComponent<Rigidbody>().isKinematic = false;
+        _playerParent.SetParent(null); 
 
         Cursor.lockState = CursorLockMode.None; 
         Cursor.visible = true;

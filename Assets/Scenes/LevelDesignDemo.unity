@@ -826,18 +826,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 696797774306398677, guid: 73c1b77b43931bf45a4395bff957474e, type: 3}
-      propertyPath: inventoryListManagerList.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1664103016310672710, guid: 73c1b77b43931bf45a4395bff957474e, type: 3}
-      propertyPath: boat
+      propertyPath: _wheelPosition
       value: 
-      objectReference: {fileID: 5643061173298340532}
-    - target: {fileID: 1664103016310672710, guid: 73c1b77b43931bf45a4395bff957474e, type: 3}
-      propertyPath: wheel
-      value: 
-      objectReference: {fileID: 1635407134}
+      objectReference: {fileID: 1652035327}
     - target: {fileID: 2550227287227247742, guid: 73c1b77b43931bf45a4395bff957474e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.415672
@@ -1255,6 +1247,11 @@ Transform:
 --- !u!4 &1635407134 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3935808321634527323, guid: d5d18eb37a22fa5489405fe182e71163, type: 3}
+  m_PrefabInstance: {fileID: 8711926093685161253}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1652035327 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6092815280515738996, guid: d5d18eb37a22fa5489405fe182e71163, type: 3}
   m_PrefabInstance: {fileID: 8711926093685161253}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1654852263
@@ -2055,10 +2052,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1975024167881624252, guid: d5d18eb37a22fa5489405fe182e71163, type: 3}
-      propertyPath: _boyancyTorque
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 2682211100836955934, guid: d5d18eb37a22fa5489405fe182e71163, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.3
@@ -2102,14 +2095,6 @@ PrefabInstance:
     - target: {fileID: 3143031808145493276, guid: d5d18eb37a22fa5489405fe182e71163, type: 3}
       propertyPath: m_Name
       value: BoatFull (New Prefab)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5217990303909606403, guid: d5d18eb37a22fa5489405fe182e71163, type: 3}
-      propertyPath: m_Intensity
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 8532325337535995301, guid: d5d18eb37a22fa5489405fe182e71163, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.31
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
