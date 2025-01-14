@@ -826,6 +826,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 696797774306398677, guid: 73c1b77b43931bf45a4395bff957474e, type: 3}
+      propertyPath: inventoryListManagerList.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1664103016310672710, guid: 73c1b77b43931bf45a4395bff957474e, type: 3}
       propertyPath: boat
       value: 
