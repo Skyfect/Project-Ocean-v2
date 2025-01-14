@@ -3,7 +3,12 @@ guid: 1fcc90b6ed0d2554b8672fdd49f85747
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bridge
+    second: {fileID: 2100000, guid: 066774c332d92e04fb957c8fb7736b91, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
