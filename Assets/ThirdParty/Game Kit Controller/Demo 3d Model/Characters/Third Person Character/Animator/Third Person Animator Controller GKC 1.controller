@@ -29096,34 +29096,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1101 &1101042941546555192
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: Action Active
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Strafe Mode Active
-    m_EventTreshold: 0
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102633252292969888}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0.25
-  m_TransitionOffset: 0
-  m_ExitTime: 0.75
-  m_HasExitTime: 0
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
 --- !u!1101 &1101042957332667154
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -66314,34 +66286,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1101 &1101943128475700448
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: Action Active
-    m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: Strafe Mode Active
-    m_EventTreshold: 0
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102674449268987056}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0.25
-  m_TransitionOffset: 0
-  m_ExitTime: 0.7916667
-  m_HasExitTime: 0
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
 --- !u!1101 &1101943395392443228
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -77973,7 +77917,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 1896b104ca017d945b0db3eaccaf834c, type: 3}
+  m_Motion: {fileID: 1827226128182048838, guid: d3a916e199182fe40a98e821b8c97fb9, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -81110,34 +81054,6 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: afd67ffb7ea37f140b282518a709d7e8, type: 3}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &1102580246678215278
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Simple Kick
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: 1101042941546555192}
-  - {fileID: 1101943128475700448}
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 40c19a6cb1d8cbd44b8926c09fe6584e, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -84621,7 +84537,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 2ad592553f0db6e40836f60f1f1c4157, type: 3}
+  m_Motion: {fileID: 1827226128182048838, guid: d3a916e199182fe40a98e821b8c97fb9, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -89292,7 +89208,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: c1d8d8dbfb853b549b4055d9a561e6ca, type: 3}
+  m_Motion: {fileID: 1827226128182048838, guid: d3a916e199182fe40a98e821b8c97fb9, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -94218,28 +94134,6 @@ AnimatorStateMachine:
   m_ExitPosition: {x: 288, y: 36, z: 0}
   m_ParentStateMachinePosition: {x: 576, y: 216, z: 0}
   m_DefaultState: {fileID: 1102695976926968732}
---- !u!1107 &1107440182020438514
-AnimatorStateMachine:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Simple Kick
-  m_ChildStates:
-  - serializedVersion: 1
-    m_State: {fileID: 1102580246678215278}
-    m_Position: {x: 300, y: 96, z: 0}
-  m_ChildStateMachines: []
-  m_AnyStateTransitions: []
-  m_EntryTransitions: []
-  m_StateMachineTransitions: {}
-  m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: 50, y: 120, z: 0}
-  m_ExitPosition: {x: 48, y: 60, z: 0}
-  m_ParentStateMachinePosition: {x: 552, y: 84, z: 0}
-  m_DefaultState: {fileID: 1102580246678215278}
 --- !u!1107 &1107442137616572492
 AnimatorStateMachine:
   serializedVersion: 6
@@ -94940,9 +94834,6 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_StateMachine: {fileID: 1107793457769849646}
     m_Position: {x: 264, y: 660, z: 0}
-  - serializedVersion: 1
-    m_StateMachine: {fileID: 1107440182020438514}
-    m_Position: {x: 264, y: 744, z: 0}
   - serializedVersion: 1
     m_StateMachine: {fileID: 1107073965438767626}
     m_Position: {x: 264, y: 840, z: 0}
