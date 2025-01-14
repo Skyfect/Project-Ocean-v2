@@ -4812,25 +4812,6 @@ MonoBehaviour:
   eventMessageParameter: 
   useRemoteAnimatorTriggerEventSystem: 1
   RemoteAnimatorTriggerEventName: Reset Melee Damage Trigger
---- !u!114 &114048432770390602
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9d14b05bef276e4486487d75acc1e0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventEnabled: 1
-  eventEnterEnabled: 1
-  eventExitEnabled: 1
-  enterEventMessage: setAttackStartState
-  enterEventMessageParameter: Kick 3
-  exitEventMessage: setAttackEndState
-  exitEventMessageParameter: Kick 3
 --- !u!114 &114051160068805988
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -5949,25 +5930,6 @@ MonoBehaviour:
   enterEventMessageParameter: Punch 5
   exitEventMessage: setAttackEndState
   exitEventMessageParameter: Punch 5
---- !u!114 &114683754438555602
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9d14b05bef276e4486487d75acc1e0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventEnabled: 1
-  eventEnterEnabled: 1
-  eventExitEnabled: 1
-  enterEventMessage: setAttackStartState
-  enterEventMessageParameter: Kick 1
-  exitEventMessage: setAttackEndState
-  exitEventMessageParameter: Kick 1
 --- !u!114 &114729371501670240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6067,25 +6029,6 @@ MonoBehaviour:
   eventMessageParameter: 
   useRemoteAnimatorTriggerEventSystem: 1
   RemoteAnimatorTriggerEventName: Reset Melee Damage Trigger
---- !u!114 &114783854320591256
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9d14b05bef276e4486487d75acc1e0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventEnabled: 1
-  eventEnterEnabled: 1
-  eventExitEnabled: 1
-  enterEventMessage: setAttackStartState
-  enterEventMessageParameter: Kick 2
-  exitEventMessage: setAttackEndState
-  exitEventMessageParameter: Kick 2
 --- !u!114 &114786654131207174
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -6305,25 +6248,6 @@ MonoBehaviour:
   eventMessageParameter: 
   useRemoteAnimatorTriggerEventSystem: 1
   RemoteAnimatorTriggerEventName: Reset Melee Damage Trigger
---- !u!114 &114876532792259398
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9d14b05bef276e4486487d75acc1e0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventEnabled: 1
-  eventEnterEnabled: 1
-  eventExitEnabled: 1
-  enterEventMessage: setAttackStartState
-  enterEventMessageParameter: Kick 4
-  exitEventMessage: setAttackEndState
-  exitEventMessageParameter: Kick 4
 --- !u!114 &114888489422238172
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -41070,28 +40994,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1101 &1101347809426438036
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions: []
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102633252292969888}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0.25
-  m_TransitionOffset: 0
-  m_ExitTime: 0.8333334
-  m_HasExitTime: 1
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
 --- !u!1101 &1101348613411413520
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -46884,28 +46786,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1101 &1101489891900450628
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions: []
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102633252292969888}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0.25
-  m_TransitionOffset: 0
-  m_ExitTime: 0.85
-  m_HasExitTime: 1
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
 --- !u!1101 &1101494053304367060
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -50525,28 +50405,6 @@ AnimatorStateTransition:
   m_TransitionOffset: 0
   m_ExitTime: 0.8333334
   m_HasExitTime: 0
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
---- !u!1101 &1101570979729957324
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions: []
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102633252292969888}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0.25
-  m_TransitionOffset: 0
-  m_ExitTime: 0.84375
-  m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -63976,28 +63834,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1101 &1101896842900469264
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions: []
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102633252292969888}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0.25
-  m_TransitionOffset: 0
-  m_ExitTime: 0.82558143
-  m_HasExitTime: 1
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
 --- !u!1101 &1101898205058844348
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -69372,34 +69208,6 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &1102016869236875034
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Kick 1
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: 1101347809426438036}
-  m_StateMachineBehaviours:
-  - {fileID: 114683754438555602}
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 1
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 1827226128182048838, guid: d3a916e199182fe40a98e821b8c97fb9, type: 3}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1102 &1102017784027102318
 AnimatorState:
   serializedVersion: 6
@@ -70853,34 +70661,6 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &1102088378617097208
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Kick 4
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: 1101896842900469264}
-  m_StateMachineBehaviours:
-  - {fileID: 114876532792259398}
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 1
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 1827226128182048838, guid: d3a916e199182fe40a98e821b8c97fb9, type: 3}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1102 &1102088641096980962
 AnimatorState:
   serializedVersion: 6
@@ -71094,34 +70874,6 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 1830e11598c89a647a282856620ea761, type: 3}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &1102097639530714538
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Kick 3
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: 1101489891900450628}
-  m_StateMachineBehaviours:
-  - {fileID: 114048432770390602}
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 1
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 1827226128182048838, guid: d3a916e199182fe40a98e821b8c97fb9, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -72150,34 +71902,6 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 0}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &1102143757078649062
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Kick 2
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: 1101570979729957324}
-  m_StateMachineBehaviours:
-  - {fileID: 114783854320591256}
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 1
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 1827226128182048838, guid: d3a916e199182fe40a98e821b8c97fb9, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -93233,18 +92957,6 @@ AnimatorStateMachine:
   m_Name: Ground Attacks
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: 1102016869236875034}
-    m_Position: {x: 350, y: 340, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1102143757078649062}
-    m_Position: {x: 360, y: 408, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1102097639530714538}
-    m_Position: {x: 360, y: 480, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1102088378617097208}
-    m_Position: {x: 360, y: 552, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: 1102934016533649346}
     m_Position: {x: 360, y: -168, z: 0}
   - serializedVersion: 1
@@ -93267,7 +92979,7 @@ AnimatorStateMachine:
     m_Position: {x: 360, y: 48, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102893367315621902}
-    m_Position: {x: 1416, y: 552, z: 0}
+    m_Position: {x: 1410, y: 550, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102597093419273262}
     m_Position: {x: 1656, y: 552, z: 0}
