@@ -1,0 +1,978 @@
+fileFormatVersion: 2
+guid: 08b3b6552cdb34f43849ea8991439bdf
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'NewRig:Spine1_M' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'NewRig:Spine1Part2_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'NewRig:NeckPart1_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'NewRig:Head_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'NewRig:ShoulderPart2_R'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'NewRig:ElbowPart1_R'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'NewRig:Wrist_R'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'NewRig:ShoulderPart2_L'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'NewRig:ElbowPart1_L'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'NewRig:Wrist_L'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Merchant Idle
+      takeName: Take 001
+      internalID: 1827226128182048838
+      firstFrame: 0
+      lastFrame: 401
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: merchant_idle(Clone)
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:MotionSystem
+      parentName: merchant_idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:MainSystem
+      parentName: NewRig:MotionSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:Main
+      parentName: NewRig:MainSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 6.123234e-17, y: 1, z: -6.123234e-17, w: 6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:FKSystem
+      parentName: NewRig:MotionSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:FKOffsetRoot_M
+      parentName: NewRig:FKSystem
+      position: {x: 0.24458574, y: 1.4378735, z: 1.6920304}
+      rotation: {x: 0.6538223, y: -0.26928863, z: 0.6538223, w: -0.26928863}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:FKExtraRoot_M
+      parentName: NewRig:FKOffsetRoot_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:FKRoot_M
+      parentName: NewRig:FKExtraRoot_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:InbetweenTargetRoot_M
+      parentName: NewRig:FKRoot_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:HipSwingerOffset_M
+      parentName: NewRig:FKRoot_M
+      position: {x: -0.17479488, y: -3.6603495e-10, z: -0.27879393}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:HipSwinger_M
+      parentName: NewRig:HipSwingerOffset_M
+      position: {x: -0, y: -1.4210854e-16, z: -1.2621774e-31}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:HipSwingerStabilizerTarget
+      parentName: NewRig:FKRoot_M
+      position: {x: -0.17479488, y: -3.660351e-10, z: -0.27879393}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:HipSwingReverse
+      parentName: NewRig:FKRoot_M
+      position: {x: -0.34958977, y: -1.4210854e-16, z: -1.470161e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:HipSwingReversePart1
+      parentName: NewRig:HipSwingReverse
+      position: {x: 0.11652992, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:HipSwingReversePart2
+      parentName: NewRig:HipSwingReversePart1
+      position: {x: 0.11652992, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:HipSwingReverseRoot
+      parentName: NewRig:HipSwingReversePart2
+      position: {x: 0.11652992, y: 2.842171e-16, z: 1.470161e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:HipSwingReverseXPart2
+      parentName: NewRig:HipSwingReverse
+      position: {x: 0.23305984, y: 0, z: 1.2621774e-31}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:FKXRoot_M
+      parentName: NewRig:FKOffsetRoot_M
+      position: {x: -1.0658141e-16, y: 0, z: 0}
+      rotation: {x: -1.2952603e-16, y: 2.5905206e-16, z: -5.551115e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:InbetweenRoot_M
+      parentName: NewRig:FKOffsetRoot_M
+      position: {x: 1.4210854e-16, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:InbetweenRootPart0_M
+      parentName: NewRig:InbetweenRoot_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -1.2952603e-16, y: 2.5905206e-16, z: -5.551115e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKSystem
+      parentName: NewRig:MotionSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKJoints
+      parentName: NewRig:IKSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKParentConstraintRoot_M
+      parentName: NewRig:IKJoints
+      position: {x: -2.3087747e-17, y: 0.970386, z: 0.007890602}
+      rotation: {x: 0.6538223, y: -0.26928863, z: -0.6538223, w: 0.26928863}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKXOffsetRoot_M
+      parentName: NewRig:IKParentConstraintRoot_M
+      position: {x: 1.4210854e-16, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKXRoot_M
+      parentName: NewRig:IKXOffsetRoot_M
+      position: {x: -1.5248654, y: 0.8541998, z: -0.24458574}
+      rotation: {x: 0.7042677, y: 0.7099346, z: 0.000000021157701, w: 0.000000020988814}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKfake0Spine_M
+      parentName: NewRig:IKParentConstraintRoot_M
+      position: {x: -1.5248654, y: 0.8541998, z: -0.24458574}
+      rotation: {x: 0.7042677, y: 0.7099346, z: -3.4699854e-19, w: -8.659492e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKFixedOrientRoot_M
+      parentName: NewRig:IKfake0Spine_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.000000014901161, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKAcRootFollowOffset_M
+      parentName: NewRig:IKFixedOrientRoot_M
+      position: {x: -0, y: -1.4210854e-16, z: -6.310887e-32}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKSpRootFollowOffset_M
+      parentName: NewRig:IKFixedOrientRoot_M
+      position: {x: -0, y: -1.4210854e-16, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKHandle
+      parentName: NewRig:IKSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKHandleFollowMain
+      parentName: NewRig:IKHandle
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 6.123234e-17, y: 1, z: -6.123234e-17, w: 6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKOffsetSpine2_M
+      parentName: NewRig:IKHandleFollowMain
+      position: {x: -0.24458574, y: 1.7871301, z: -1.4432381}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKExtraSpine2_M
+      parentName: NewRig:IKOffsetSpine2_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKSpine2_M
+      parentName: NewRig:IKExtraSpine2_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKSpine2LocalOrient1_M
+      parentName: NewRig:IKSpine2_M
+      position: {x: 3.1554436e-32, y: -2.842171e-16, z: -3.5527136e-17}
+      rotation: {x: 0.6538223, y: -0.26928863, z: -0.6538223, w: 0.26928863}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKSpine2LocalOrient2_M
+      parentName: NewRig:IKSpine2LocalOrient1_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKOffsetConstrainedSpine1_M
+      parentName: NewRig:IKHandleFollowMain
+      position: {x: -0.24458574, y: 1.4378735, z: -1.6920304}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKhybridOffsetSpine1_M
+      parentName: NewRig:IKOffsetConstrainedSpine1_M
+      position: {x: -3.9443044e-33, y: 0, z: 0}
+      rotation: {x: 0.6538223, y: -0.26928863, z: -0.6538223, w: 0.26928863}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKOffsetSpine1_M
+      parentName: NewRig:IKhybridOffsetSpine1_M
+      position: {x: -0, y: 0, z: -7.888609e-33}
+      rotation: {x: 0.6538223, y: -0.26928863, z: -0.6538223, w: -0.26928863}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKExtraSpine1_M
+      parentName: NewRig:IKOffsetSpine1_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKSpine1_M
+      parentName: NewRig:IKExtraSpine1_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKSpine1LocalOrient1_M
+      parentName: NewRig:IKSpine1_M
+      position: {x: 3.1554436e-32, y: -1.4210854e-16, z: -1.0103029e-16}
+      rotation: {x: 0.6538223, y: -0.26928863, z: -0.6538223, w: 0.26928863}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKSpine1LocalOrient2_M
+      parentName: NewRig:IKSpine1LocalOrient1_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKhybridFollowSpine1_M
+      parentName: NewRig:IKhybridOffsetSpine1_M
+      position: {x: 2.842171e-16, y: 0, z: 3.5527136e-17}
+      rotation: {x: 6.123037e-17, y: 6.797937e-33, z: 1.110223e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKhybridExtraSpine1_M
+      parentName: NewRig:IKhybridFollowSpine1_M
+      position: {x: -0, y: 0, z: -3.9443044e-33}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKhybridSpine1_M
+      parentName: NewRig:IKhybridExtraSpine1_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKhybridOffsetSpine2_M
+      parentName: NewRig:IKhybridSpine1_M
+      position: {x: -0.4225964, y: -0.07273299, z: -1.595924e-16}
+      rotation: {x: 0, y: 0, z: 0.35490197, w: 0.93490356}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKhybridExtraSpine2_M
+      parentName: NewRig:IKhybridOffsetSpine2_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKhybridSpine2_M
+      parentName: NewRig:IKhybridExtraSpine2_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKhybridOffsetSpine3_M
+      parentName: NewRig:IKhybridSpine2_M
+      position: {x: -0.4423958, y: -0.018852245, z: 3.9687123e-16}
+      rotation: {x: 0, y: 0, z: 0.022737712, w: 0.9997415}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKhybridExtraSpine3_M
+      parentName: NewRig:IKhybridOffsetSpine3_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKhybridSpine3_M
+      parentName: NewRig:IKhybridExtraSpine3_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKOffsetSpine3_M
+      parentName: NewRig:IKhybridSpine3_M
+      position: {x: -0, y: -3.5527136e-17, z: 6.310887e-32}
+      rotation: {x: 0.5045559, y: -0.49540222, z: -0.5045559, w: -0.49540222}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKExtraSpine3_M
+      parentName: NewRig:IKOffsetSpine3_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKSpine3_M
+      parentName: NewRig:IKExtraSpine3_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKSpine3LocalOrient1_M
+      parentName: NewRig:IKSpine3_M
+      position: {x: -3.9443043e-32, y: 2.842171e-16, z: -1.4210854e-16}
+      rotation: {x: 0.3846023, y: -0.5933642, z: -0.3846023, w: 0.5933642}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKSpine3LocalOrient2_M
+      parentName: NewRig:IKSpine3LocalOrient1_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKScaler
+      parentName: NewRig:IKSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IKScalerRoot_M
+      parentName: NewRig:IKScaler
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:FKIKSystem
+      parentName: NewRig:MotionSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:FKIKParentConstraintSpine_M
+      parentName: NewRig:FKIKSystem
+      position: {x: 0.24458574, y: 1.4378735, z: 1.6920304}
+      rotation: {x: 0.6538223, y: -0.26928866, z: 0.6538223, w: -0.26928866}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:FKIKSpine_M
+      parentName: NewRig:FKIKParentConstraintSpine_M
+      position: {x: -0.14452933, y: 1.4210854e-16, z: 0.22804439}
+      rotation: {x: 0.6538223, y: -0.26928863, z: -0.6538223, w: -0.26928863}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:RootSystem
+      parentName: NewRig:MotionSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:RootCenterBtwLegsBlended_M
+      parentName: NewRig:RootSystem
+      position: {x: 2.4054068e-17, y: 0.970386, z: -0.007890602}
+      rotation: {x: 6.123234e-17, y: 1, z: -6.123234e-17, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:RootOffsetX_M
+      parentName: NewRig:RootCenterBtwLegsBlended_M
+      position: {x: -6.310887e-32, y: 0, z: 1.0103029e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:RootExtraX_M
+      parentName: NewRig:RootOffsetX_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:RootX_M
+      parentName: NewRig:RootExtraX_M
+      position: {x: -0.24458574, y: 0.46748742, z: -1.6999211}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:DeformationSystem
+      parentName: merchant_idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:Root_M
+      parentName: NewRig:DeformationSystem
+      position: {x: -0.000000014901161, y: 1.0789104, z: -0.08748484}
+      rotation: {x: -0.6538223, y: 0.26928863, z: 0.65382236, w: -0.2692886}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:joint3_M
+      parentName: NewRig:Root_M
+      position: {x: -0.16302714, y: -0.05438849, z: -3.5527136e-17}
+      rotation: {x: -0.000000029802322, y: -0, z: -0.6787771, w: -0.73434436}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1}
+    - name: NewRig:joint4_M
+      parentName: NewRig:joint3_M
+      position: {x: -0.7915397, y: 1.4210854e-16, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: NewRig:Hip_R
+      parentName: NewRig:Root_M
+      position: {x: 0.021719435, y: 0.012970893, z: -0.28634197}
+      rotation: {x: 0.6547819, y: -0.7555304, z: 0.0066263084, w: 0.019765409}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000001}
+    - name: NewRig:HipPart1_R
+      parentName: NewRig:Hip_R
+      position: {x: -0.15733016, y: 1.4986767e-12, z: -5.0097526e-12}
+      rotation: {x: -0.000000043772157, y: 0.003247025, z: 0.20287654, w: 0.97919893}
+      scale: {x: 1.0000001, y: 1.0000006, z: 1.0000004}
+    - name: NewRig:HipPart2_R
+      parentName: NewRig:HipPart1_R
+      position: {x: -0.15733016, y: 1.0072653e-12, z: -5.1315397e-12}
+      rotation: {x: -0.0000000027939675, y: -0.00000004097819, z: -0.000000029802319, w: 1}
+      scale: {x: 1.0000005, y: 0.99999994, z: 1.0000001}
+    - name: NewRig:Knee_R
+      parentName: NewRig:HipPart2_R
+      position: {x: -0.15733016, y: 5.050538e-13, z: -5.2048674e-12}
+      rotation: {x: -0.001439539, y: 0.0017421285, z: 0.33229914, w: 0.9431714}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000004}
+    - name: NewRig:Ankle_R
+      parentName: NewRig:Knee_R
+      position: {x: -0.5741285, y: 2.5579537e-15, z: 1.798881e-12}
+      rotation: {x: 0.0070564374, y: -0.02696137, z: -0.22131796, w: 0.9748034}
+      scale: {x: 1.0000001, y: 1.0000007, z: 1.0000004}
+    - name: NewRig:Toes_R
+      parentName: NewRig:Ankle_R
+      position: {x: -0.078120336, y: 0.321552, z: 7.377281e-11}
+      rotation: {x: -0.013073688, y: -0.011979546, z: -0.67547214, w: 0.73717225}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: NewRig:ToesEnd_R
+      parentName: NewRig:Toes_R
+      position: {x: -0.113770165, y: -1.3962164e-14, z: 0.00000019068385}
+      rotation: {x: -0, y: -0, z: -0.0000000056897975, w: 1}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1.0000001}
+    - name: NewRig:RootPart1_M
+      parentName: NewRig:Root_M
+      position: {x: -0.11652992, y: -1.1368684e-15, z: 7.105427e-17}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:RootPart2_M
+      parentName: NewRig:RootPart1_M
+      position: {x: -0.11652992, y: 0, z: -7.105427e-17}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:Spine1_M
+      parentName: NewRig:RootPart2_M
+      position: {x: -0.11652992, y: 5.684342e-16, z: -7.105427e-17}
+      rotation: {x: -0.000000029802326, y: -0.000000014901163, z: 0.37606782, w: 0.9265922}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1}
+    - name: NewRig:Spine1Part1_M
+      parentName: NewRig:Spine1_M
+      position: {x: -0.18194705, y: 8.5265126e-16, z: -1.4210854e-16}
+      rotation: {x: -0.000000011207687, y: -0.000000027614593, z: -1.3322676e-15, w: 1}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1.0000005}
+    - name: NewRig:Spine1Part2_M
+      parentName: NewRig:Spine1Part1_M
+      position: {x: -0.18194705, y: 0, z: 3.5527136e-17}
+      rotation: {x: 0.00000001120769, y: 0.000000027614599, z: -0.00000008940697, w: 1}
+      scale: {x: 1.0000006, y: 1.0000007, z: 1.0000005}
+    - name: NewRig:Chest_M
+      parentName: NewRig:Spine1Part2_M
+      position: {x: -0.18194705, y: -5.684342e-16, z: -1.4210854e-16}
+      rotation: {x: -0.000000027383788, y: 0.000000018501872, z: -0.21770516, w: -0.9760146}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000001}
+    - name: NewRig:Neck_M
+      parentName: NewRig:Chest_M
+      position: {x: -0.51011205, y: 0, z: 6.0396133e-16}
+      rotation: {x: -0.0000000600655, y: 0.0000000069666397, z: 0.41866565, w: -0.90814054}
+      scale: {x: 1.0000006, y: 1.0000014, z: 1.0000008}
+    - name: NewRig:NeckPart1_M
+      parentName: NewRig:Neck_M
+      position: {x: -0.40102348, y: -1.1368684e-15, z: 2.2382096e-15}
+      rotation: {x: -8.548966e-10, y: -3.6948222e-10, z: -2.4307477e-16, w: 1}
+      scale: {x: 1.0000001, y: 1.0000011, z: 1.0000006}
+    - name: NewRig:NeckPart2_M
+      parentName: NewRig:NeckPart1_M
+      position: {x: -0.40102348, y: 2.8421708e-15, z: 2.096101e-15}
+      rotation: {x: -0.000000009680955, y: -0.0000000034231542, z: -8.2713164e-17, w: 1}
+      scale: {x: 1.0000006, y: 1.0000013, z: 1.0000006}
+    - name: NewRig:Head_M
+      parentName: NewRig:NeckPart2_M
+      position: {x: -0.40102348, y: -5.684342e-16, z: 2.344791e-15}
+      rotation: {x: -0.000000012281971, y: -1.7547871e-10, z: 0.65673476, w: 0.75412166}
+      scale: {x: 1.0000011, y: 1.0000008, z: 1.0000008}
+    - name: NewRig:HeadEnd_M
+      parentName: NewRig:Head_M
+      position: {x: -0.14376238, y: 4.2632563e-16, z: 4.897268e-17}
+      rotation: {x: 8.881782e-16, y: 8.881782e-16, z: -0.00000005960463, w: 1}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
+    - name: NewRig:Eye_R
+      parentName: NewRig:Head_M
+      position: {x: -0.08172983, y: 0.06764169, z: -0.07580915}
+      rotation: {x: -0.000000035493464, y: -0.00000004706227, z: -0.6436855, w: 0.76529014}
+      scale: {x: 0.99999994, y: 1.0000002, z: 0.99999946}
+    - name: NewRig:EyeEnd_R
+      parentName: NewRig:Eye_R
+      position: {x: -0.07238815, y: 0, z: 2.664535e-16}
+      rotation: {x: -0, y: -0, z: -1.670403e-15, w: 1}
+      scale: {x: 1, y: 1.0000008, z: 0.99999994}
+    - name: NewRig:Eye_L
+      parentName: NewRig:Head_M
+      position: {x: -0.08172983, y: 0.06764169, z: 0.07580915}
+      rotation: {x: -0.000000035493464, y: -0.00000004706227, z: -0.6436855, w: 0.76529014}
+      scale: {x: 0.99999994, y: 1.0000002, z: 0.99999946}
+    - name: NewRig:EyeEnd_L
+      parentName: NewRig:Eye_L
+      position: {x: -0.07238815, y: -2.842171e-16, z: -2.5757173e-16}
+      rotation: {x: -0, y: -0, z: -1.670403e-15, w: 1}
+      scale: {x: 1.0000005, y: 1.0000008, z: 1.0000004}
+    - name: NewRig:Jaw_M
+      parentName: NewRig:Head_M
+      position: {x: 0.04379685, y: 0.05582338, z: -1.0658141e-16}
+      rotation: {x: 0.000000010327117, y: -0.00000003197231, z: -0.8118507, w: 0.58386505}
+      scale: {x: 1.0000005, y: 1.0000019, z: 1.000001}
+    - name: NewRig:JawEnd_M
+      parentName: NewRig:Jaw_M
+      position: {x: -0.20275497, y: 5.684342e-16, z: -2.5400755e-19}
+      rotation: {x: 4.440891e-16, y: -0, z: 3.3018178e-16, w: 1}
+      scale: {x: 1.0000006, y: 1.0000013, z: 1.0000002}
+    - name: NewRig:joint1_M
+      parentName: NewRig:Head_M
+      position: {x: -0.00017921187, y: 0.09772883, z: -3.5527135e-16}
+      rotation: {x: -0.000000013874866, y: -0.000000054673315, z: -0.6644769, w: 0.74730897}
+      scale: {x: 1.0000014, y: 1.0000012, z: 1.0000008}
+    - name: NewRig:joint2_M
+      parentName: NewRig:joint1_M
+      position: {x: -0.19561012, y: 2.842171e-16, z: -4.3434172e-17}
+      rotation: {x: 3.5527128e-15, y: -0, z: -7.585848e-16, w: 1}
+      scale: {x: 1.0000008, y: 1.0000012, z: 1.0000007}
+    - name: NewRig:Scapula_R
+      parentName: NewRig:Chest_M
+      position: {x: -0.3616186, y: -0.020564467, z: -0.08339482}
+      rotation: {x: 0.12993288, y: 0.69598025, z: 0.1654731, w: -0.6865475}
+      scale: {x: 1.0000013, y: 1.0000011, z: 1.000001}
+    - name: NewRig:Shoulder_R
+      parentName: NewRig:Scapula_R
+      position: {x: -0.32109213, y: -1.4495072e-14, z: -1.7053025e-15}
+      rotation: {x: 0.015996872, y: -0.00021779534, z: 0.1066746, w: 0.9941653}
+      scale: {x: 1.0000014, y: 1, z: 0.9999998}
+    - name: NewRig:ShoulderPart1_R
+      parentName: NewRig:Shoulder_R
+      position: {x: -0.13480547, y: -4.263256e-15, z: 2.5579537e-15}
+      rotation: {x: -0.00000002235174, y: 0.00031304904, z: -0.04135309, w: 0.9991446}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000005}
+    - name: NewRig:ShoulderPart2_R
+      parentName: NewRig:ShoulderPart1_R
+      position: {x: -0.13480547, y: -4.263256e-15, z: 1.7053025e-15}
+      rotation: {x: 0.00000005029142, y: -0.0000000059080767, z: -0.0000000372529, w: 1}
+      scale: {x: 1.0000008, y: 1.0000002, z: 1.0000001}
+    - name: NewRig:Elbow_R
+      parentName: NewRig:ShoulderPart2_R
+      position: {x: -0.13480547, y: -4.5474734e-15, z: 5.684342e-16}
+      rotation: {x: 0.000009844029, y: 0.00009820692, z: -0.08010444, w: 0.9967865}
+      scale: {x: 0.9999997, y: 1.0000007, z: 1.0000004}
+    - name: NewRig:ElbowPart1_R
+      parentName: NewRig:Elbow_R
+      position: {x: -0.29638058, y: -2.8421708e-15, z: 8.579803e-15}
+      rotation: {x: -0.000000019844983, y: 0.000000029815272, z: -0.00000002235174, w: 1}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000005}
+    - name: NewRig:ElbowPart2_R
+      parentName: NewRig:ElbowPart1_R
+      position: {x: -0.29638058, y: -6.252776e-15, z: 6.6791017e-15}
+      rotation: {x: 0.000000019844983, y: -0.00000002981527, z: 0.00000002235174, w: 1}
+      scale: {x: 1.0000012, y: 1.0000005, z: 1.0000005}
+    - name: NewRig:Wrist_R
+      parentName: NewRig:ElbowPart2_R
+      position: {x: -0.29638058, y: -8.526512e-15, z: 2.2737367e-15}
+      rotation: {x: -0.017327957, y: -0.04529104, z: 0.068880185, w: 0.9964457}
+      scale: {x: 1.0000007, y: 1.0000005, z: 1.0000006}
+    - name: NewRig:MiddleFinger1_R
+      parentName: NewRig:Wrist_R
+      position: {x: -0.1630089, y: -5.684342e-16, z: 1.8829381e-15}
+      rotation: {x: 0.001027869, y: 0.025061533, z: -0.045284268, w: 0.99865925}
+      scale: {x: 1.0000001, y: 1.0000006, z: 1}
+    - name: NewRig:MiddleFinger2_R
+      parentName: NewRig:MiddleFinger1_R
+      position: {x: -0.07101843, y: 7.105427e-17, z: -5.684342e-16}
+      rotation: {x: 0.00018424071, y: 0.015539834, z: -0.0015689993, w: 0.999878}
+      scale: {x: 1.0000006, y: 1.0000007, z: 1.0000002}
+    - name: NewRig:MiddleFinger3_R
+      parentName: NewRig:MiddleFinger2_R
+      position: {x: -0.068134, y: 7.105427e-17, z: 7.105427e-16}
+      rotation: {x: 0.000070536604, y: 0.010015945, z: -0.029223364, w: 0.9995228}
+      scale: {x: 1.0000006, y: 1.0000006, z: 1.0000002}
+    - name: NewRig:MiddleFinger4_R
+      parentName: NewRig:MiddleFinger3_R
+      position: {x: -0.072096296, y: 2.6645352e-17, z: -5.684342e-16}
+      rotation: {x: 3.637978e-11, y: -0, z: -0.000000004273544, w: 1}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1}
+    - name: NewRig:IndexFinger1_R
+      parentName: NewRig:Wrist_R
+      position: {x: -0.15328555, y: 0.05308456, z: -0.00245708}
+      rotation: {x: 0.009938426, y: 0.035278063, z: -0.045847274, w: 0.9982759}
+      scale: {x: 1.0000001, y: 1.0000005, z: 1}
+    - name: NewRig:IndexFinger2_R
+      parentName: NewRig:IndexFinger1_R
+      position: {x: -0.08005513, y: -7.105427e-17, z: 2.131628e-15}
+      rotation: {x: -0.000000073574476, y: 0.00024576482, z: -0.00008325089, w: 1}
+      scale: {x: 1.0000006, y: 1.000001, z: 1.0000002}
+    - name: NewRig:IndexFinger3_R
+      parentName: NewRig:IndexFinger2_R
+      position: {x: -0.05451016, y: 9.947598e-16, z: 2.131628e-15}
+      rotation: {x: -0.014489214, y: 0.015739972, z: -0.0012416791, w: 0.99977034}
+      scale: {x: 1, y: 0.99999994, z: 1.0000001}
+    - name: NewRig:IndexFinger4_R
+      parentName: NewRig:IndexFinger3_R
+      position: {x: -0.09264793, y: 7.105427e-17, z: -5.684342e-16}
+      rotation: {x: -0, y: -0, z: 1.0186336e-10, w: 1}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1.0000001}
+    - name: NewRig:ThumbFinger1_R
+      parentName: NewRig:Wrist_R
+      position: {x: -0.07535569, y: 0.083785444, z: -0.012434067}
+      rotation: {x: -0.4058687, y: 0.16774796, z: -0.371342, w: 0.8180687}
+      scale: {x: 1.0000007, y: 0.99999994, z: 1.0000001}
+    - name: NewRig:ThumbFinger2_R
+      parentName: NewRig:ThumbFinger1_R
+      position: {x: -0.055601582, y: 5.684342e-16, z: -1.4210854e-16}
+      rotation: {x: -0.011072958, y: -0.03127285, z: 0.009086217, w: 0.99940825}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000002}
+    - name: NewRig:ThumbFinger3_R
+      parentName: NewRig:ThumbFinger2_R
+      position: {x: -0.06864535, y: 0, z: -2.4868996e-16}
+      rotation: {x: 0.0023114164, y: 0.0048383856, z: 0.038801886, w: 0.99923253}
+      scale: {x: 1, y: 1, z: 1.0000002}
+    - name: NewRig:ThumbFinger4_R
+      parentName: NewRig:ThumbFinger3_R
+      position: {x: -0.07435432, y: 5.684342e-16, z: -4.2632563e-16}
+      rotation: {x: -0, y: -0, z: 4.2746234e-10, w: 1}
+      scale: {x: 1, y: 1.0000005, z: 0.99999994}
+    - name: NewRig:Cup_R
+      parentName: NewRig:Wrist_R
+      position: {x: -0.024806604, y: -0.009420733, z: 0.0020786782}
+      rotation: {x: -0.20446031, y: -0.028816793, z: 0.043664724, w: 0.9774759}
+      scale: {x: 1.0000006, y: 1.0000011, z: 1.0000006}
+    - name: NewRig:RingFinger1_R
+      parentName: NewRig:Cup_R
+      position: {x: -0.13622789, y: -0.019602, z: -0.012093751}
+      rotation: {x: 0.20733291, y: 0.06422087, z: -0.037173785, w: 0.9754521}
+      scale: {x: 1.0000007, y: 1.0000007, z: 1.0000004}
+    - name: NewRig:RingFinger2_R
+      parentName: NewRig:RingFinger1_R
+      position: {x: -0.06206602, y: 1.4210854e-16, z: 0}
+      rotation: {x: -0.0024809528, y: 0.00043883154, z: -0.04010349, w: 0.9991924}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000002}
+    - name: NewRig:RingFinger3_R
+      parentName: NewRig:RingFinger2_R
+      position: {x: -0.0777405, y: -1.4210854e-16, z: -9.947598e-16}
+      rotation: {x: 0.0044418164, y: 0.009897605, z: 0.032282718, w: 0.9994199}
+      scale: {x: 1.0000005, y: 1.0000007, z: 0.9999998}
+    - name: NewRig:RingFinger4_R
+      parentName: NewRig:RingFinger3_R
+      position: {x: -0.04398415, y: 0, z: 5.684342e-16}
+      rotation: {x: -0, y: -0, z: -0.0000000012041705, w: 1}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1.0000002}
+    - name: NewRig:Scapula_L
+      parentName: NewRig:Chest_M
+      position: {x: -0.3616186, y: -0.020564467, z: 0.08339482}
+      rotation: {x: -0.69598025, y: 0.12993285, z: -0.6865475, w: -0.16547315}
+      scale: {x: 1.0000014, y: 1.000001, z: 1.000001}
+    - name: NewRig:Shoulder_L
+      parentName: NewRig:Scapula_L
+      position: {x: 0.32109213, y: -2.3874235e-14, z: 5.684342e-16}
+      rotation: {x: -0.015996834, y: 0.00021779446, z: -0.10667468, w: -0.9941653}
+      scale: {x: 0.99999994, y: 0.9999996, z: 0.99999946}
+    - name: NewRig:ShoulderPart1_L
+      parentName: NewRig:Shoulder_L
+      position: {x: 0.13480547, y: 0, z: 5.684342e-16}
+      rotation: {x: 0.000000026077032, y: 0.00031271315, z: -0.041353073, w: 0.99914455}
+      scale: {x: 1.0000006, y: 1.0000004, z: 0.9999998}
+    - name: NewRig:ShoulderPart2_L
+      parentName: NewRig:ShoulderPart1_L
+      position: {x: 0.13480547, y: -5.684342e-16, z: -2.842171e-16}
+      rotation: {x: 0.00000012107193, y: 0.000000022511822, z: -0.000000008016749, w: 1}
+      scale: {x: 1.0000005, y: 1.0000001, z: 0.99999994}
+    - name: NewRig:Elbow_L
+      parentName: NewRig:ShoulderPart2_L
+      position: {x: 0.13480547, y: -5.684342e-16, z: 5.684342e-16}
+      rotation: {x: 0.000009835424, y: 0.000098380646, z: -0.08010435, w: 0.9967865}
+      scale: {x: 1, y: 1.0000001, z: 1.0000005}
+    - name: NewRig:ElbowPart1_L
+      parentName: NewRig:Elbow_L
+      position: {x: 0.29638058, y: -6.1188016e-10, z: -0.0000000012955463}
+      rotation: {x: 0.000000022810152, y: -0.0000000034404524, z: 0.000000022351736, w: 1}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000005}
+    - name: NewRig:ElbowPart2_L
+      parentName: NewRig:ElbowPart1_L
+      position: {x: 0.29638058, y: -4.154127e-10, z: -0.0000000013712297}
+      rotation: {x: -0.00000009625693, y: 0.0000000636708, z: -0.000000022351735, w: 1}
+      scale: {x: 1.000001, y: 1.0000004, z: 1.0000005}
+    - name: NewRig:Wrist_L
+      parentName: NewRig:ElbowPart2_L
+      position: {x: 0.29638058, y: -2.0997262e-10, z: -0.0000000014173034}
+      rotation: {x: 0.017327927, y: 0.045291144, z: -0.06888023, w: -0.9964457}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000006}
+    - name: NewRig:MiddleFinger1_L
+      parentName: NewRig:Wrist_L
+      position: {x: 0.1630089, y: -1.5436968e-11, z: 2.2609909e-11}
+      rotation: {x: 0.0010279955, y: 0.025061686, z: -0.045284305, w: 0.99865925}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000007}
+    - name: NewRig:MiddleFinger2_L
+      parentName: NewRig:MiddleFinger1_L
+      position: {x: 0.07101843, y: -3.0965452e-12, z: 3.3291768e-12}
+      rotation: {x: 0.0001841522, y: 0.015539665, z: -0.0015689743, w: 0.99987805}
+      scale: {x: 1, y: 0.9999996, z: 0.9999998}
+    - name: NewRig:MiddleFinger3_L
+      parentName: NewRig:MiddleFinger2_L
+      position: {x: 0.068134, y: -8.085976e-13, z: 2.9754686e-12}
+      rotation: {x: 0.00007054594, y: 0.010015968, z: -0.029223485, w: 0.99952275}
+      scale: {x: 0.9999998, y: 1, z: 0.9999996}
+    - name: NewRig:MiddleFinger4_L
+      parentName: NewRig:MiddleFinger3_L
+      position: {x: 0.072096296, y: 6.208989e-13, z: -1.1573319e-12}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:IndexFinger1_L
+      parentName: NewRig:Wrist_L
+      position: {x: 0.15328555, y: -0.05308456, z: 0.00245708}
+      rotation: {x: -0.009938524, y: -0.03527801, z: 0.04584741, w: -0.99827594}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000005}
+    - name: NewRig:IndexFinger2_L
+      parentName: NewRig:IndexFinger1_L
+      position: {x: 0.08005513, y: -1.6933654e-12, z: 3.7337243e-12}
+      rotation: {x: -0.00000015459949, y: 0.00024588397, z: -0.00008320663, w: 1}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000001}
+    - name: NewRig:IndexFinger3_L
+      parentName: NewRig:IndexFinger2_L
+      position: {x: 0.05451016, y: -1.1254997e-12, z: 2.5326939e-12}
+      rotation: {x: 0.014489202, y: -0.015739957, z: 0.00124161, w: -0.99977034}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1.0000002}
+    - name: NewRig:IndexFinger4_L
+      parentName: NewRig:IndexFinger3_L
+      position: {x: 0.09264793, y: 9.444712e-13, z: 4.0589043e-12}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:ThumbFinger1_L
+      parentName: NewRig:Wrist_L
+      position: {x: 0.07535569, y: -0.083785444, z: 0.012434067}
+      rotation: {x: -0.4058689, y: 0.16774808, z: -0.371342, w: 0.8180686}
+      scale: {x: 1.0000007, y: 1.0000005, z: 1.0000011}
+    - name: NewRig:ThumbFinger2_L
+      parentName: NewRig:ThumbFinger1_L
+      position: {x: 0.055601582, y: 2.489079e-11, z: -2.7536097e-11}
+      rotation: {x: -0.011073137, y: -0.03127352, z: 0.009086563, w: 0.99940825}
+      scale: {x: 1.0000001, y: 0.9999998, z: 1.0000005}
+    - name: NewRig:ThumbFinger3_L
+      parentName: NewRig:ThumbFinger2_L
+      position: {x: 0.06864535, y: 6.3068305e-12, z: -2.6294486e-11}
+      rotation: {x: 0.0023111645, y: 0.00483861, z: 0.03880144, w: 0.99923253}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: NewRig:ThumbFinger4_L
+      parentName: NewRig:ThumbFinger3_L
+      position: {x: 0.07435432, y: 8.3437614e-12, z: -1.5562591e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:Cup_L
+      parentName: NewRig:Wrist_L
+      position: {x: 0.024806604, y: 0.009420733, z: -0.0020786782}
+      rotation: {x: -0.20446023, y: -0.028816748, z: 0.04366472, w: 0.9774758}
+      scale: {x: 1.0000011, y: 1.0000005, z: 1.0000014}
+    - name: NewRig:RingFinger1_L
+      parentName: NewRig:Cup_L
+      position: {x: 0.13622789, y: 0.019602, z: 0.012093751}
+      rotation: {x: 0.20733292, y: 0.06422087, z: -0.03717379, w: 0.9754521}
+      scale: {x: 1, y: 0.9999997, z: 0.9999998}
+    - name: NewRig:RingFinger2_L
+      parentName: NewRig:RingFinger1_L
+      position: {x: 0.06206602, y: -1.3176305e-12, z: 8.506902e-12}
+      rotation: {x: -0.0024809532, y: 0.00043869007, z: -0.04010189, w: 0.9991925}
+      scale: {x: 0.99999994, y: 1, z: 1.0000001}
+    - name: NewRig:RingFinger3_L
+      parentName: NewRig:RingFinger2_L
+      position: {x: 0.0777405, y: -1.5558043e-12, z: -5.0292214e-13}
+      rotation: {x: 0.004441866, y: 0.00989754, z: 0.032282628, w: 0.9994199}
+      scale: {x: 0.9999997, y: 1, z: 1}
+    - name: NewRig:RingFinger4_L
+      parentName: NewRig:RingFinger3_L
+      position: {x: 0.04398415, y: 1.9930723e-14, z: 2.6190606e-12}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:Hip_L
+      parentName: NewRig:Root_M
+      position: {x: 0.021719435, y: 0.012970893, z: 0.28634197}
+      rotation: {x: -0.75553036, y: -0.6547819, z: -0.019765437, w: 0.0066263005}
+      scale: {x: 1.0000006, y: 1.0000006, z: 1.0000006}
+    - name: NewRig:HipPart1_L
+      parentName: NewRig:Hip_L
+      position: {x: 0.15733016, y: 3.1884922e-10, z: 8.197517e-11}
+      rotation: {x: -0.000000009313226, y: 0.0032468517, z: 0.20287648, w: 0.97919893}
+      scale: {x: 1.0000005, y: 1.0000011, z: 1.0000005}
+    - name: NewRig:HipPart2_L
+      parentName: NewRig:HipPart1_L
+      position: {x: 0.15733016, y: 3.2430023e-10, z: 5.6690652e-11}
+      rotation: {x: -0.000000005122275, y: 0.000000052619725, z: -0.000000059604645, w: 1}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
+    - name: NewRig:Knee_L
+      parentName: NewRig:HipPart2_L
+      position: {x: 0.15733016, y: 3.2774977e-10, z: 3.1055547e-11}
+      rotation: {x: 0.0014394836, y: -0.0017421135, z: -0.33229914, w: -0.9431714}
+      scale: {x: 1.0000006, y: 1.0000004, z: 1.0000008}
+    - name: NewRig:Ankle_L
+      parentName: NewRig:Knee_L
+      position: {x: 0.5741285, y: 0.0000000012012285, z: -2.0310153e-12}
+      rotation: {x: 0.0070564896, y: -0.026961224, z: -0.22131778, w: 0.9748035}
+      scale: {x: 1.0000006, y: 0.9999997, z: 1.0000002}
+    - name: NewRig:Toes_L
+      parentName: NewRig:Ankle_L
+      position: {x: 0.078120336, y: -0.321552, z: -1.7190004e-10}
+      rotation: {x: 0.01307374, y: 0.011979536, z: 0.67547214, w: -0.7371722}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.99999994}
+    - name: NewRig:ToesEnd_L
+      parentName: NewRig:Toes_L
+      position: {x: 0.113770165, y: -8.8817837e-17, z: 8.757387e-10}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:Geometry
+      parentName: merchant_idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:Rig:geo
+      parentName: NewRig:Geometry
+      position: {x: 0.017105637, y: 1.43051, z: 0.28035766}
+      rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:Rig:beden.001
+      parentName: NewRig:Rig:geo
+      position: {x: 0.19757812, y: -1.8751659, z: -10.2486105}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:Rig:el.001
+      parentName: NewRig:Rig:geo
+      position: {x: 0.19757812, y: -1.8751659, z: -10.2486105}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:Rig:goz.001
+      parentName: NewRig:Rig:geo
+      position: {x: 0.19757812, y: -1.8751659, z: -10.2486105}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:Rig:kafa.001
+      parentName: NewRig:Rig:geo
+      position: {x: 0.19757812, y: -1.8751659, z: -10.2486105}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "NewRig:Rig:K\u0131yafet.001"
+      parentName: NewRig:Rig:geo
+      position: {x: 0.19757812, y: -1.8751659, z: -10.2486105}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:Rig:sapka.001
+      parentName: NewRig:Rig:geo
+      position: {x: 0.19757812, y: -1.8751659, z: -10.2486105}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:Rig:canta.001
+      parentName: NewRig:Rig:geo
+      position: {x: 0.19757812, y: -1.8751659, z: -10.2486105}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:Rig:Retopo_kafa.002
+      parentName: NewRig:Rig:geo
+      position: {x: 0.19757812, y: -1.8751659, z: -10.2486105}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:Rig:Cube.005
+      parentName: NewRig:Rig:geo
+      position: {x: 0.19757812, y: -1.8751659, z: -10.2486105}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NewRig:Rig:Cube.015
+      parentName: NewRig:Rig:geo
+      position: {x: 0.19757812, y: -1.8751659, z: -10.2486105}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
