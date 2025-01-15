@@ -1,0 +1,57 @@
+# Blender MTL File: 'SHOWMAKER.blend'
+# Material Count: 4
+
+newmtl Material.001
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump C:\\Users\\Ergenc\\Desktop\\SKYFECH\\showmaker\\final\\texture\\Showmaker\\SHOWMAKER_Normal_OpenGL.png
+map_Kd C:\\Users\\Ergenc\\Desktop\\SKYFECH\\showmaker\\final\\texture\\Showmaker\\SHOWMAKER_Base_color.png
+map_Ns C:\\Users\\Ergenc\\Desktop\\SKYFECH\\showmaker\\final\\texture\\Showmaker\\SHOWMAKER_Roughness.png
+refl C:\\Users\\Ergenc\\Desktop\\SKYFECH\\showmaker\\final\\texture\\Showmaker\\SHOWMAKER_Metallic.png
+
+newmtl Material.002
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump C:\\Users\\Ergenc\\Desktop\\SKYFECH\\showmaker\\final\\texture\\Showmaker\\SHOWMAKER_Normal_OpenGL.png
+map_Kd C:\\Users\\Ergenc\\Desktop\\SKYFECH\\showmaker\\final\\texture\\Showmaker\\SHOWMAKER_Base_color.png
+map_Ns C:\\Users\\Ergenc\\Desktop\\SKYFECH\\showmaker\\final\\texture\\Showmaker\\SHOWMAKER_Roughness.png
+refl C:\\Users\\Ergenc\\Desktop\\SKYFECH\\showmaker\\final\\texture\\Showmaker\\SHOWMAKER_Metallic.png
+
+newmtl SHOWMAKER
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\Ergenc\\Desktop\\SKYFECH\\showmaker\\final\\texture\\Showmaker\\SHOWMAKER_Base_color.png
+map_Ns C:\\Users\\Ergenc\\Desktop\\SKYFECH\\showmaker\\final\\texture\\Showmaker\\SHOWMAKER_Roughness.png
+refl C:\\Users\\Ergenc\\Desktop\\SKYFECH\\showmaker\\final\\texture\\Showmaker\\SHOWMAKER_Metallic.png
+
+newmtl parça
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump C:\\Users\\Ergenc\\Desktop\\SKYFECH\\showmaker\\final\\texture\\parça\\NO BAKE_Normal_OpenGL.png
+map_Kd C:\\Users\\Ergenc\\Desktop\\SKYFECH\\showmaker\\final\\texture\\parça\\NO BAKE_Base_color.png
+map_Ns C:\\Users\\Ergenc\\Desktop\\SKYFECH\\showmaker\\final\\texture\\parça\\NO BAKE_Roughness.png
+refl C:\\Users\\Ergenc\\Desktop\\SKYFECH\\showmaker\\final\\texture\\parça\\NO BAKE_Metallic.png
