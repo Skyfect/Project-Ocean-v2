@@ -2502,7 +2502,6 @@ GameObject:
   - component: {fileID: 8532531390411038153}
   - component: {fileID: 8035606798151528902}
   - component: {fileID: 5583190425409837551}
-  - component: {fileID: 3246596260743227775}
   m_Layer: 0
   m_Name: 'Player '
   m_TagString: Untagged
@@ -2636,24 +2635,6 @@ MonoBehaviour:
   gunBarrel: {fileID: 0}
   fireRange: 100
   gunDisableTimer: 3
---- !u!114 &3246596260743227775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2700042287027243864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4769966fa6515e438ce91e4e2d1a0f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionRange: 5
-  camera: {fileID: 1418497885688321376}
-  wheel: {fileID: 0}
-  boat: {fileID: 0}
-  shipTurnSpeed: 10
-  _selectedMaterial: {fileID: 2100000, guid: 481cb06a7b6b2664d804b89cc53550dd, type: 2}
 --- !u!1 &2741017189969104895
 GameObject:
   m_ObjectHideFlags: 0
@@ -7512,7 +7493,7 @@ MonoBehaviour:
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
-  m_RendererIndex: -1
+  m_RendererIndex: 0
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
