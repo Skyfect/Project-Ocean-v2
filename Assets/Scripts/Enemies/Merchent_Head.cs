@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Merchent_Head : MonoBehaviour
 {
@@ -7,6 +8,12 @@ public class Merchent_Head : MonoBehaviour
 
     [SerializeField] private float _smoothSpeed = 5f;
 
+    private NavMeshAgent _agent;
+
+    private void Awake()
+    {
+        _agent = _head.GetComponent<NavMeshAgent>();
+    }
     void Start()
     {
     }
@@ -27,6 +34,13 @@ public class Merchent_Head : MonoBehaviour
 
                 Vector3 euler = transform.eulerAngles;
                 transform.eulerAngles = new Vector3(0, euler.y, 0);
+
+                _agent.SetDestination(_target.position);
+            }
+
+            else
+            {
+                _agent.speed = 0 ;
             }
         }
     }

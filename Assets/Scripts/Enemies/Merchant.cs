@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Merchant : MonoBehaviour
 {
@@ -9,7 +10,6 @@ public class Merchant : MonoBehaviour
     private Transform[] childBones;
     private Vector3 originalPosition;
     private Vector3 velocity = Vector3.zero;
-    private bool isMoving = false;
 
     void Start()
     {
@@ -29,27 +29,26 @@ public class Merchant : MonoBehaviour
 
     void Update()
     {
-        float distance = Vector2.Distance(targetPosition.position, transform.position);
+        float distance = Vector2.Distance(targetPosition.position, neckBone.position);
         if (neckBone != null)
         {
             Vector3 startPosition = neckBone.position;
             Vector3 endPosition = targetPosition.position;
 
             //neckBone.localPosition = originalPosition + new Vector3(0, 0, stretchAmount);
-            if (distance > 2 && distance < 10 && isMoving)
+            if (distance > 2 && distance < 10)
             {
-                transform.position = transform.position + transform.up * 0.02f;
                 neckBone.position = Vector3.SmoothDamp(neckBone.position, targetPosition.position, ref velocity, stretchAmount);
                 neckBone.rotation = Quaternion.Slerp(neckBone.rotation, targetPosition.rotation, Time.deltaTime * stretchAmount);
-
             }
             else if (distance <= 2)
-                isMoving = false;
+            {
+                neckBone.position = neckBone.position;
+                neckBone.rotation = neckBone.rotation;
+            }
 
             else if (distance >= 10)
             {
-                isMoving = true;
-
                 neckBone.position = Vector3.SmoothDamp(neckBone.position, originalPosition, ref velocity, stretchAmount);
                 neckBone.rotation = Quaternion.Slerp(neckBone.rotation, Quaternion.identity, Time.deltaTime * stretchAmount);
             }
