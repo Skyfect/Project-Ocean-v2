@@ -2,30 +2,20 @@ using UnityEngine;
 
 public class Merchant : MonoBehaviour
 {
-    public float stretchAmount = 0.2f; 
-
-    public Transform neckBone;
-    private Transform[] childBones;
-
-    private Vector3 originalPosition; 
-
+    public float stretchAmount = 0.2f;
     public Transform targetPosition;
-    private Vector3 velocity = Vector3.zero;
+    public Transform neckBone;
 
-    public bool isMoving = false;
+    private Transform[] childBones;
+    private Vector3 originalPosition;
+    private Vector3 velocity = Vector3.zero;
+    private bool isMoving = false;
 
     void Start()
     {
         childBones = neckBone.GetComponentsInChildren<Transform>();
-
-        if (neckBone == null)
-        {
-            Debug.LogError("Boyun kemiði bulunamadý!");
-
-            return;
-        }
-
         SkinnedMeshRenderer skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+
         if (skinnedMeshRenderer != null)
         {
             Bounds bounds = skinnedMeshRenderer.localBounds;
@@ -42,25 +32,26 @@ public class Merchant : MonoBehaviour
         float distance = Vector2.Distance(targetPosition.position, transform.position);
         if (neckBone != null)
         {
+            Vector3 startPosition = neckBone.position;
+            Vector3 endPosition = targetPosition.position;
+
             //neckBone.localPosition = originalPosition + new Vector3(0, 0, stretchAmount);
-            if(distance > 2 && distance < 10 && isMoving)
+            if (distance > 2 && distance < 10 && isMoving)
             {
                 transform.position = transform.position + transform.up * 0.02f;
                 neckBone.position = Vector3.SmoothDamp(neckBone.position, targetPosition.position, ref velocity, stretchAmount);
                 neckBone.rotation = Quaternion.Slerp(neckBone.rotation, targetPosition.rotation, Time.deltaTime * stretchAmount);
+
             }
-            else if(distance <= 2)
+            else if (distance <= 2)
                 isMoving = false;
 
             else if (distance >= 10)
             {
                 isMoving = true;
 
-                neckBone.position = Vector3.SmoothDamp( neckBone.position, originalPosition, ref velocity, stretchAmount
-                );
-
-                neckBone.rotation = Quaternion.Slerp(neckBone.rotation, Quaternion.identity,Time.deltaTime * stretchAmount
-                );
+                neckBone.position = Vector3.SmoothDamp(neckBone.position, originalPosition, ref velocity, stretchAmount);
+                neckBone.rotation = Quaternion.Slerp(neckBone.rotation, Quaternion.identity, Time.deltaTime * stretchAmount);
             }
 
 
@@ -78,4 +69,5 @@ public class Merchant : MonoBehaviour
     {
         targetPosition = newTarget;
     }
+
 }

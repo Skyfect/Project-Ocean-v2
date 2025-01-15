@@ -2745,9 +2745,9 @@ GameObject:
   m_Component:
   - component: {fileID: 543450652548932223}
   - component: {fileID: 919132148023326918}
-  - component: {fileID: 919132148023326919}
   - component: {fileID: 919132148023326921}
   - component: {fileID: 919132148023326920}
+  - component: {fileID: 919132148023326919}
   - component: {fileID: 919132148023326922}
   m_Layer: 0
   m_Name: merchant_idle
@@ -2769,7 +2769,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: a6d3f06fcb3478940a72215d6573e389, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 1
@@ -2791,9 +2791,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stretchAmount: 2
-  neckBone: {fileID: 7543372507958932935}
   targetPosition: {fileID: 1133149350}
-  isMoving: 0
+  neckBone: {fileID: 7543372507958932935}
 --- !u!54 &919132148023326920
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2857,6 +2856,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 1133149350}
+  _head: {fileID: 837936634538364534}
+  _smoothSpeed: 5
 --- !u!1 &919132149505919921
 GameObject:
   m_ObjectHideFlags: 0
@@ -4211,6 +4212,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7543372507958932935}
+  - component: {fileID: 7543372507958932936}
   m_Layer: 0
   m_Name: NewRig:NeckPart1_M
   m_TagString: Untagged
@@ -5110,6 +5112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8068413906347051948}
   - component: {fileID: 7157923507526686948}
+  - component: {fileID: 8068413906347051949}
   m_Layer: 0
   m_Name: NewRig:Rig:sapka.001
   m_TagString: Untagged
@@ -5941,6 +5944,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8789638406073299239}
   - component: {fileID: 2078716424937454088}
+  - component: {fileID: 8789638406073299240}
   m_Layer: 0
   m_Name: NewRig:Rig:kafa.001
   m_TagString: Untagged
@@ -7875,7 +7879,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 837936634538364534}
-  - component: {fileID: 6895498966173163212}
+  - component: {fileID: 6895498966173163213}
   m_Layer: 0
   m_Name: NewRig:Head_M
   m_TagString: Untagged
@@ -7883,19 +7887,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &6895498966173163212
-MonoBehaviour:
+--- !u!136 &6895498966173163213
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6895498966173163211}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbf0e5e5c24cc264ab7db08673f6c3ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 1133149350}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.18396522
+  m_Height: 0.70368797
+  m_Direction: 1
+  m_Center: {x: -0.003437906, y: 0.022174083, z: -0.049772706}
 --- !u!4 &6906955599538652551
 Transform:
   m_ObjectHideFlags: 0
@@ -8680,6 +8694,29 @@ Transform:
   - {fileID: 8664970579868526672}
   m_Father: {fileID: 5609331199187248668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &7543372507958932936
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515462005982059990}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.13297644
+  m_Height: 0.6839662
+  m_Direction: 0
+  m_Center: {x: -0.20580336, y: -0.0946987, z: -0.0000008076708}
 --- !u!1 &7550085741191407751
 GameObject:
   m_ObjectHideFlags: 0
@@ -8689,7 +8726,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8664970579868526672}
-  - component: {fileID: 8664970579868526673}
   m_Layer: 0
   m_Name: NewRig:NeckPart2_M
   m_TagString: Untagged
@@ -9271,6 +9307,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7907239952894734189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &8068413906347051949
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3680943368382319616}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!4 &8081121059578710061
 Transform:
   m_ObjectHideFlags: 0
@@ -9949,19 +10007,6 @@ Transform:
   - {fileID: 837936634538364534}
   m_Father: {fileID: 7543372507958932935}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8664970579868526673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7550085741191407751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbf0e5e5c24cc264ab7db08673f6c3ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 1133149350}
 --- !u!4 &8665474656610815022
 Transform:
   m_ObjectHideFlags: 0
@@ -10169,6 +10214,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7907239952894734189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &8789638406073299240
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4499210532479654776}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!4 &8839820539719390684
 Transform:
   m_ObjectHideFlags: 0
