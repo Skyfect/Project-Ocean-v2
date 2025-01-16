@@ -26,13 +26,15 @@ public class Player_Boat_Interaction : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
         _anim = GetComponent<Animator>();
-        boat = FindAnyObjectByType<Boat_Controller>().transform;
+        if(boat != null) boat = FindAnyObjectByType<Boat_Controller>().transform;
         boatController = FindFirstObjectByType<Boat_Controller>();
-        wheel = GameObject.FindWithTag("Wheel").transform;
+        if (wheel != null) wheel = GameObject.FindWithTag("Wheel").transform;
     }
 
     void Update()
     {
+        if (camera == null) return;
+
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
