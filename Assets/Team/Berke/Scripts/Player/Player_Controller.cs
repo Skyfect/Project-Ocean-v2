@@ -1,7 +1,9 @@
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Unity.Netcode;
 
-public class Player_Controller : MonoBehaviour
+public class Player_Controller : NetworkBehaviour
 {
     [Header("Movement")]
     [SerializeField] private float _walkSpeed = 10f;
@@ -62,7 +64,7 @@ public class Player_Controller : MonoBehaviour
     private Rigidbody _rb;
     private NetworkConnection _networkConnection;
 
-    private void Awake()
+    public void Awake()
     {
         _anim = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody>();
@@ -83,17 +85,20 @@ public class Player_Controller : MonoBehaviour
 
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         UnityEngine.Cursor.visible = false;
-    }
 
-    void Start()
-    {
         GetInitialParameters();
         InvokeRepeating("MovementUpdate", 0f, 0.02f);
     }
 
-
-    private void OnEnable()
+    void Start()
     {
+       
+    }
+
+
+    public void OnEnable()
+    {
+
         _walkAction.Enable();
         _runAction.Enable();
         _lookAction.Enable();
@@ -106,6 +111,7 @@ public class Player_Controller : MonoBehaviour
 
     private void OnDisable()
     {
+
         _walkAction.Disable();
         _runAction.Disable();
         _lookAction.Disable();
@@ -121,6 +127,7 @@ public class Player_Controller : MonoBehaviour
     [System.Obsolete]
     private void MovementUpdate()
     {
+        if (!IsOwner) return;
         HandleMovement();
         HandleRotation();
         HandleClingInteraction();
