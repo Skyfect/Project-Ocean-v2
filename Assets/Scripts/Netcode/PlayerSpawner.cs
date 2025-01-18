@@ -12,13 +12,14 @@ public class PlayerSpawner : MonoBehaviour
     {
         
         _networkUI = FindFirstObjectByType<Network_UI>();
+        NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
         //StartHost();
     }
 
     public void StartHost()
     {
         NetworkManager.Singleton.StartHost();
-        SpawnPlayer(NetworkManager.Singleton.LocalClientId);
+        //SpawnPlayer(NetworkManager.Singleton.LocalClientId);
         _networkUI.PanelDisabled();
         Debug.Log("Host baþlatýldý.");
     }
@@ -26,7 +27,7 @@ public class PlayerSpawner : MonoBehaviour
     public void StartClient()
     {
         NetworkManager.Singleton.StartClient();
-        SpawnPlayer(NetworkManager.Singleton.LocalClientId);
+        //SpawnPlayer(NetworkManager.Singleton.LocalClientId);
         _networkUI.PanelDisabled();
         Debug.Log("Ýstemci baðlanýyor...");
 
@@ -35,7 +36,7 @@ public class PlayerSpawner : MonoBehaviour
     public void StartServer()
     {
         NetworkManager.Singleton.StartServer();
-        SpawnPlayer(NetworkManager.Singleton.LocalClientId);
+        //SpawnPlayer(NetworkManager.Singleton.LocalClientId);
         _networkUI.PanelDisabled();
     }
 
@@ -46,6 +47,20 @@ public class PlayerSpawner : MonoBehaviour
         {
             GameObject playerInstance = Instantiate(playerPrefab, spawnPoints[random].position, Quaternion.identity);
             playerInstance.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId, true);
+        }
+    }
+
+    private void OnClientConnected(ulong clientId)
+    {
+        if (NetworkManager.Singleton.ConnectedClients.ContainsKey(clientId))
+            return;
+
+        if (NetworkManager.Singleton.IsHost)
+        {
+            var player = Instantiate(NetworkManager.Singleton.NetworkConfig.PlayerPrefab);
+            var networkObject = player.GetComponent<NetworkObject>();
+
+            networkObject.SpawnAsPlayerObject(clientId);
         }
     }
 }

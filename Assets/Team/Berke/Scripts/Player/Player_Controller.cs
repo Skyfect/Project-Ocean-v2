@@ -10,6 +10,7 @@ public class Player_Controller : NetworkBehaviour
     [SerializeField] private float _runSpeed;
     [SerializeField] private float _crouchSpeed;
     [SerializeField] private float _animHorizontal, _animVertical;
+    private float updateRate = 0.1f;
     private bool _isCrouch;
 
     private float nextUpdateTime = 0f;
@@ -127,7 +128,7 @@ public class Player_Controller : NetworkBehaviour
     [System.Obsolete]
     private void MovementUpdate()
     {
-        if (!IsOwner) return;
+        //if (!IsOwner) return;
         HandleMovement();
         HandleRotation();
         HandleClingInteraction();
@@ -155,10 +156,17 @@ public class Player_Controller : NetworkBehaviour
 
         _rb.linearVelocity = (_currentMovement);
 
-        if (_networkConnection != null && Time.time >= nextUpdateTime)
+        //if (_networkConnection != null && Time.time >= nextUpdateTime)
+        //{
+        //    _networkConnection.SendPositionUpdate(transform.position);
+        //    nextUpdateTime = Time.time + updateInterval;
+        //}
+
+        if (Time.time >= nextUpdateTime)
         {
-            _networkConnection.SendPositionUpdate(transform.position);
-            nextUpdateTime = Time.time + updateInterval;
+            nextUpdateTime = Time.time + updateRate;
+            MatchManager.instance.SendPositionUpdate(transform.position);
+            MatchManager.instance.SendRotationUpdate(transform.rotation.eulerAngles);
         }
     }
 
@@ -262,6 +270,14 @@ public class Player_Controller : NetworkBehaviour
             _anim.SetFloat("vertical", _animVertical);
 
             _currentMovement.y -= _gravity * Time.deltaTime;
+        }
+
+
+        if (Time.time >= nextUpdateTime)
+        {
+            nextUpdateTime = Time.time + updateRate;
+            MatchManager.instance.SendPositionUpdate(transform.position);
+            MatchManager.instance.SendRotationUpdate(transform.rotation.eulerAngles);
         }
     }
 

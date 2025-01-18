@@ -2503,7 +2503,7 @@ GameObject:
   - component: {fileID: 8532531390411038153}
   - component: {fileID: 8035606798151528902}
   - component: {fileID: 5583190425409837551}
-  - component: {fileID: 6836538915912347155}
+  - component: {fileID: -1226373178315863980}
   m_Layer: 0
   m_Name: 'Player '
   m_TagString: Untagged
@@ -2663,7 +2663,7 @@ MonoBehaviour:
   gunBarrel: {fileID: 0}
   fireRange: 100
   gunDisableTimer: 3
---- !u!114 &6836538915912347155
+--- !u!114 &-1226373178315863980
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2683,9 +2683,9 @@ MonoBehaviour:
   SyncPositionX: 0
   SyncPositionY: 0
   SyncPositionZ: 0
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 0
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 1
   SyncScaleX: 0
   SyncScaleY: 0
   SyncScaleZ: 0
