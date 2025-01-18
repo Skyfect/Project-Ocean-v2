@@ -23723,7 +23723,7 @@ BlendTree:
   m_Name: Idle Type
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400014, guid: ce448a8080b4e934b8473badd27be402, type: 3}
+    m_Motion: {fileID: 1827226128182048838, guid: 5415b5f285d34dc4b9a63b5985ba3c7c, type: 3}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -23731,7 +23731,7 @@ BlendTree:
     m_DirectBlendParameter: Forward
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400014, guid: ce448a8080b4e934b8473badd27be402, type: 3}
+    m_Motion: {fileID: 1827226128182048838, guid: 5415b5f285d34dc4b9a63b5985ba3c7c, type: 3}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -24816,7 +24816,7 @@ BlendTree:
   m_Name: Free Movement On Fire Powers
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400014, guid: ce448a8080b4e934b8473badd27be402, type: 3}
+    m_Motion: {fileID: 1827226128182048838, guid: 5415b5f285d34dc4b9a63b5985ba3c7c, type: 3}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
