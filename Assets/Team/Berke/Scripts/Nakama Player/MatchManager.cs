@@ -194,25 +194,25 @@ public class MatchManager : MonoBehaviour
             if (isLocalPlayer)
             {
                 Debug.Log($"Adding PlayerController to {userId}");
-                playerObj.AddComponent<PlayerController>();
-                playerObj.GetComponent<Renderer>().material.color = Color.blue;
+                //playerObj.AddComponent<PlayerController>();
+                //playerObj.GetComponent<Renderer>().material.color = Color.blue;
                 
                 // Local player'ın kamerasını aktif et
-                if (playerCamera != null)
-                {
-                    playerCamera.gameObject.SetActive(true);
-                }
+                //if (playerCamera != null)
+                //{
+                //    playerCamera.gameObject.SetActive(true);
+                //}
             }
             else
             {
                 Debug.Log($"Remote player spawned: {userId}");
-                playerObj.GetComponent<Renderer>().material.color = Color.red;
+                //playerObj.GetComponent<Renderer>().material.color = Color.red;
                 
                 // Remote player'ın kamerasını deaktif et
-                if (playerCamera != null)
-                {
-                    playerCamera.gameObject.SetActive(false);
-                }
+                //if (playerCamera != null)
+                //{
+                //    playerCamera.gameObject.SetActive(false);
+                //}
             }
         }
     }

@@ -16,6 +16,8 @@ public class Player_Controller : NetworkBehaviour
     private float nextUpdateTime = 0f;
     private float updateInterval = 0.05f;
 
+    private bool canControl = false;
+
     [Header("Jump")]
     [SerializeField] private float _jumpForce= 5;
     [SerializeField] private float _gravity = 9.81f;
@@ -128,6 +130,8 @@ public class Player_Controller : NetworkBehaviour
     [System.Obsolete]
     private void MovementUpdate()
     {
+        if (canControl = gameObject.name != "LocalPlayer")
+            return;
         //if (!IsOwner) return;
         HandleMovement();
         HandleRotation();
@@ -246,6 +250,13 @@ public class Player_Controller : NetworkBehaviour
         _verticalRotation = Mathf.Clamp(_verticalRotation, - _upDownRange, _upDownRange);
 
         _headTransform.localRotation = Quaternion.Euler(_verticalRotation, 0, 0);
+
+        if (Time.time >= nextUpdateTime)
+        {
+            nextUpdateTime = Time.time + updateRate;
+            MatchManager.instance.SendPositionUpdate(transform.position);
+            MatchManager.instance.SendRotationUpdate(transform.rotation.eulerAngles);
+        }
     }
 
     private void HandleGravityAndJump()
@@ -299,6 +310,13 @@ public class Player_Controller : NetworkBehaviour
             
             _anim.SetBool("crouch", false);
             _isCrouch = false;
+        }
+
+        if (Time.time >= nextUpdateTime)
+        {
+            nextUpdateTime = Time.time + updateRate;
+            MatchManager.instance.SendPositionUpdate(transform.position);
+            MatchManager.instance.SendRotationUpdate(transform.rotation.eulerAngles);
         }
     }
 
