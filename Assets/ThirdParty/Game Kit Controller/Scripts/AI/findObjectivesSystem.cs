@@ -699,9 +699,9 @@ public class findObjectivesSystem : MonoBehaviour
 
         GameObject newEmptyTarget = new GameObject ();
         newEmptyTarget.name = "Empty Target Position Transform";
-        emptyTargetPositionTransform = newEmptyTarget.transform;
-        emptyTargetPositionTransform.SetParent (AIParent);
-        emptyTargetPositionTransform.rotation = AITransform.rotation;
+        //emptyTargetPositionTransform = newEmptyTarget.transform;
+        //emptyTargetPositionTransform.SetParent (AIParent);
+        //emptyTargetPositionTransform.rotation = AITransform.rotation;
 
         AIPatrolManagerLocated = AIPatrolManager != null;
 
