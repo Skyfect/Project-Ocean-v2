@@ -130,8 +130,8 @@ public class Player_Controller : NetworkBehaviour
     [System.Obsolete]
     private void MovementUpdate()
     {
-        if (canControl = gameObject.name != "LocalPlayer")
-            return;
+        //if (canControl = gameObject.name != "LocalPlayer")
+        //    return;
         //if (!IsOwner) return;
         HandleMovement();
         HandleRotation();
