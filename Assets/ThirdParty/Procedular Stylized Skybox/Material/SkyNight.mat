@@ -40,9 +40,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Background:
-        m_Texture: {fileID: 2800000, guid: 59d1808ef6666844e87a842a983c398d, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 2800000, guid: a68622f68cd7c774e817ddeae6462d16, type: 3}
+        m_Scale: {x: 2, y: 2}
+        m_Offset: {x: 1, y: 1}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -287,8 +287,8 @@ Material:
     - _BackgroundOpacityEffectDay: 1.613
     - _BackgroundOpacityEffectNight: 1.28
     - _BackgroundOpacityNight: 1.135
-    - _BackgroundPower: 0.162
-    - _BackgroundSize: 0.56
+    - _BackgroundPower: 0.1
+    - _BackgroundSize: 0.48
     - _BackgroundSpeed: 0.01
     - _Bias: 0.89
     - _Bias1: 0.14
@@ -337,8 +337,8 @@ Material:
     - _CloudBottomOpacity: 0.51
     - _CloudBottomScale: 0.61
     - _CloudBottomSize: 1.06
-    - _CloudBrightness: 0.767
-    - _CloudContrast: 6.9
+    - _CloudBrightness: 0.06
+    - _CloudContrast: 8.3
     - _CloudCoverage: 0.574
     - _CloudCoverage1: 0.672
     - _CloudCoverage2: 1
@@ -397,7 +397,7 @@ Material:
     - _CloudsBackgroundOpacityEffect: 2.3561494
     - _CloudsEdgeOpacity: 0.114
     - _CloudsHeight: 0.159
-    - _CloudsHorizonGradient: 3
+    - _CloudsHorizonGradient: 4.1
     - _CloudsHorizonGradient1: 5.6831355
     - _CloudsHorizonHeight: 0.14
     - _CloudsHorizonHeight1: 2.27
@@ -507,7 +507,7 @@ Material:
     - _ShootingStarSize: 0.79
     - _SideLightingMultiplier: 0
     - _SkyGradientHeight: 1
-    - _SkyHorizonGradient: 0.37
+    - _SkyHorizonGradient: 0.6
     - _SkyHorizonGradient1: -0.1
     - _SkyHorizonSmooth: -3
     - _Smooth: 10
