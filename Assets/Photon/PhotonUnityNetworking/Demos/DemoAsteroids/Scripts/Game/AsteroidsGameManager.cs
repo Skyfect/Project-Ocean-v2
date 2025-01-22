@@ -21,7 +21,7 @@ namespace Photon.Pun.Demo.Asteroids
 
         // Name of the prefab in the Resources folder. E.g. "Skeleton"
         [Tooltip("Name of the Player Prefab in Resources folder.")]
-        public string playerPrefabName = "Skeleton";
+        public string playerPrefabName = "PlayerPrefab";
 
         // Base spawn position
         private Vector3 spawnPosition = new Vector3(200f, 5.2f, 150f);
