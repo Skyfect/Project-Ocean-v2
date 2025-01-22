@@ -8,9 +8,13 @@ public class PhotonFPSController : MonoBehaviourPun, IPunObservable
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float mouseSensitivity = 2f;
     [SerializeField] private float gravity = 9.81f;
+    [SerializeField] private float runSpeed = 8f;
+    [SerializeField] private float jumpHeight = 2f;
+
 
     [Header("References")]
     [SerializeField] private Camera playerCamera;
+    [SerializeField] private Animator animator;
 
     private CharacterController characterController;
     private float verticalVelocity;
@@ -20,6 +24,7 @@ public class PhotonFPSController : MonoBehaviourPun, IPunObservable
     private Vector3 networkPosition;
     private Quaternion networkRotation;
 
+    private bool isWalking, isRunning, isJumping;
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
@@ -49,6 +54,7 @@ public class PhotonFPSController : MonoBehaviourPun, IPunObservable
         {
             HandleLook();
             HandleMovement();
+            UpdateAnimation();
         }
         else
         {
@@ -84,6 +90,16 @@ public class PhotonFPSController : MonoBehaviourPun, IPunObservable
         if (characterController.isGrounded)
         {
             verticalVelocity = -2f;
+
+            if (Input.GetButtonDown("Jump"))
+            {
+                verticalVelocity = Mathf.Sqrt(jumpHeight * 2f * gravity);
+                isJumping = true; // Trigger jump animation
+            }
+            else
+            {
+                isJumping = false;
+            }
         }
         else
         {
@@ -92,7 +108,22 @@ public class PhotonFPSController : MonoBehaviourPun, IPunObservable
 
         move.y = verticalVelocity;
 
-        characterController.Move(move * moveSpeed * Time.deltaTime);
+        float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : moveSpeed;
+        characterController.Move(move * currentSpeed * Time.deltaTime);
+
+        // Update movement states
+        isWalking = moveX != 0 || moveZ != 0;
+        isRunning = isWalking && Input.GetKey(KeyCode.LeftShift);
+    }
+
+    private void UpdateAnimation()
+    {
+        Debug.Log("isWalking: " + isWalking + " isRunning: " + isRunning + " isJumping: " + isJumping);
+
+        // Update animator parameters
+        animator.SetBool("isWalking", isWalking);
+        animator.SetBool("isRunning", isRunning);
+        animator.SetBool("isJumping", isJumping);
     }
 
     // Photon PUN's serialization method for syncing data
@@ -102,11 +133,22 @@ public class PhotonFPSController : MonoBehaviourPun, IPunObservable
         {
             stream.SendNext(transform.position);
             stream.SendNext(transform.rotation);
+            stream.SendNext(isWalking);
+            stream.SendNext(isRunning);
+            stream.SendNext(isJumping);
         }
         else // Receiving data
         {
             networkPosition = (Vector3)stream.ReceiveNext();
             networkRotation = (Quaternion)stream.ReceiveNext();
+            isWalking = (bool)stream.ReceiveNext();
+            isRunning = (bool)stream.ReceiveNext();
+            isJumping = (bool)stream.ReceiveNext();
+
+            // Update remote animations
+            animator.SetBool("isWalking", isWalking);
+            animator.SetBool("isRunning", isRunning);
+            animator.SetBool("isJumping", isJumping);
         }
     }
 }
