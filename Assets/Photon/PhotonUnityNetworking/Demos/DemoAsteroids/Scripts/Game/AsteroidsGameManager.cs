@@ -24,7 +24,7 @@ namespace Photon.Pun.Demo.Asteroids
         public string playerPrefabName = "PlayerPrefab";
 
         // Base spawn position
-        private Vector3 spawnPosition = new Vector3(200f, 5.2f, 150f);
+        private Vector3 spawnPosition = new Vector3(200f, 10f, 150f);
 
         private void Awake()
         {

@@ -1,5 +1,6 @@
 using UnityEngine;
 using Photon.Pun;
+using System;
 
 [RequireComponent(typeof(CharacterController))]
 public class PhotonFPSController : MonoBehaviourPunCallbacks
