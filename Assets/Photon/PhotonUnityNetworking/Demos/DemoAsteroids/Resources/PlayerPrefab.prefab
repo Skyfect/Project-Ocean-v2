@@ -2631,7 +2631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   mouseSensitivity: 2
-  gravity: 0
+  gravity: 9
   playerCamera: {fileID: 9061977502104440800}
 --- !u!114 &3419411118066942088
 MonoBehaviour:
@@ -2652,6 +2652,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
+  - {fileID: 4773286842126727357}
   - {fileID: 1246163973249743256}
   sceneViewId: 0
   InstantiationId: 0

@@ -1,14 +1,13 @@
 using UnityEngine;
 using Photon.Pun;
-using System;
 
 [RequireComponent(typeof(CharacterController))]
-public class PhotonFPSController : MonoBehaviourPunCallbacks
+public class PhotonFPSController : MonoBehaviourPun, IPunObservable
 {
     [Header("Player Settings")]
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float mouseSensitivity = 2f;
-    [SerializeField] private float gravity;
+    [SerializeField] private float gravity = 9.81f;
 
     [Header("References")]
     [SerializeField] private Camera playerCamera;
@@ -17,6 +16,10 @@ public class PhotonFPSController : MonoBehaviourPunCallbacks
     private float verticalVelocity;
     private float xRotation = 0f;
 
+    // Variables for position and rotation sync
+    private Vector3 networkPosition;
+    private Quaternion networkRotation;
+
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
@@ -24,14 +27,12 @@ public class PhotonFPSController : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        // If this is not our local player, disable camera and audio listener
-        // (so that we don't hear or see duplicates from other players).
         if (!photonView.IsMine)
         {
-            // Destroy or disable camera components to avoid duplications
+            // Disable local control components for remote players
             if (playerCamera != null)
             {
-                Destroy(playerCamera.gameObject);
+                playerCamera.gameObject.SetActive(false);
             }
         }
         else
@@ -44,45 +45,45 @@ public class PhotonFPSController : MonoBehaviourPunCallbacks
 
     private void Update()
     {
-        // Only process input and movement if this is the local player's view
-        if (!photonView.IsMine) return;
-
-        HandleLook();
-        HandleMovement();
+        if (photonView.IsMine)
+        {
+            HandleLook();
+            HandleMovement();
+        }
+        else
+        {
+            // Smoothly interpolate position and rotation for remote players
+            transform.position = Vector3.Lerp(transform.position, networkPosition, Time.deltaTime * 10f);
+            transform.rotation = Quaternion.Lerp(transform.rotation, networkRotation, Time.deltaTime * 10f);
+        }
     }
 
     private void HandleLook()
     {
-        // Mouse input
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
-        // Vertical rotation (pitch)
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f); // Limit vertical rotation
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        // Apply rotation to camera
-        if (playerCamera)
+        if (playerCamera != null)
         {
             playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         }
 
-        // Horizontal rotation (yaw)
         transform.Rotate(Vector3.up * mouseX);
     }
 
     private void HandleMovement()
     {
-        float moveX = Input.GetAxis("Horizontal");  // A, D (or left, right)
-        float moveZ = Input.GetAxis("Vertical");    // W, S (or up, down)
+        float moveX = Input.GetAxis("Horizontal");
+        float moveZ = Input.GetAxis("Vertical");
 
-        // Direction based on local forward/right
-        Vector3 move = (transform.right * moveX + transform.forward * moveZ);
+        Vector3 move = transform.right * moveX + transform.forward * moveZ;
 
-        // Apply gravity
         if (characterController.isGrounded)
         {
-            verticalVelocity = -2f; // small downward force to keep grounded
+            verticalVelocity = -2f;
         }
         else
         {
@@ -91,7 +92,21 @@ public class PhotonFPSController : MonoBehaviourPunCallbacks
 
         move.y = verticalVelocity;
 
-        // Move the controller
         characterController.Move(move * moveSpeed * Time.deltaTime);
+    }
+
+    // Photon PUN's serialization method for syncing data
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting) // Sending data
+        {
+            stream.SendNext(transform.position);
+            stream.SendNext(transform.rotation);
+        }
+        else // Receiving data
+        {
+            networkPosition = (Vector3)stream.ReceiveNext();
+            networkRotation = (Quaternion)stream.ReceiveNext();
+        }
     }
 }
