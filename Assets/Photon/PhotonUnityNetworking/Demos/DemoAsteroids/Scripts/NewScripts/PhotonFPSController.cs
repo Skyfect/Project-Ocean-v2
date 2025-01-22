@@ -8,7 +8,7 @@ public class PhotonFPSController : MonoBehaviourPunCallbacks
     [Header("Player Settings")]
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float mouseSensitivity = 2f;
-    [SerializeField] private float gravity = 9.81f;
+    [SerializeField] private float gravity;
 
     [Header("References")]
     [SerializeField] private Camera playerCamera;

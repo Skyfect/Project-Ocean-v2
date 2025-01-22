@@ -2631,7 +2631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   mouseSensitivity: 2
-  gravity: 9.81
+  gravity: 0
   playerCamera: {fileID: 9061977502104440800}
 --- !u!114 &3419411118066942088
 MonoBehaviour:
@@ -2678,7 +2678,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
